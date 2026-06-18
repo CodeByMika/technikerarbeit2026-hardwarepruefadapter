@@ -1,0 +1,1 @@
+# technikerarbeit2026-hardwarepruefadapter

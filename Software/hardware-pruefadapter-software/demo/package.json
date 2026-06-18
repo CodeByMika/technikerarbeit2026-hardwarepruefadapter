@@ -1,0 +1,14 @@
+{
+  "name": "hardware-pruefadapter-proxy",
+  "version": "1.0.0",
+  "description": "SSE Fan-Out Proxy für 20+ Demo-Zuschauer",
+  "main": "proxy.js",
+  "scripts": {
+    "start": "node proxy.js"
+  },
+  "dependencies": {
+    "eventsource": "^2.0.2",
+    "express": "^4.18.2",
+    "http-proxy-middleware": "^2.0.6"
+  }
+}

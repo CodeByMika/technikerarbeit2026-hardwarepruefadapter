@@ -1,0 +1,5 @@
+# Definierung der Syles im Code
+# Basis-Stil (LLVM, Google, Chromium, Mozilla, WebKit, Microsoft)
+BasedOnStyle: Google
+
+ColumnLimit: 80

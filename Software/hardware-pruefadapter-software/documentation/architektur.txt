@@ -1,0 +1,87 @@
+=============================================================================================
+                      HARDWARE PRÜFADAPTER - SYSTEMARCHITEKTUR (V2.1)
+=============================================================================================
+
+[ EXTERNE WELT ]               [ ADAPTER-SCHICHT ]                  [ LOGIK-SCHICHT (Core) ]
+Hardware / Netzwerk            Implementiert Interfaces             Platform-Unabhängig
+
+                               +-------------------+    (Bouncer)
+Web-Browser / REST <=========> | IWebServer        | <------------> [ ApiController ]
+(Dashboard/API)                | EspAsync/Native   |                | - Routen / JSON
+                               +-------------------+                | - CQRS Pattern
+                                                                    |
+                                 +----------------------------------+------------------+
+                                 | (WRITE / Commands)                                  | (READ / Queries)
+                                 v                                                     v
+                       +-------------------+                                 +-------------------+
+                       | Mailbox           |                                 | ProcessImager     |
+                       | (Asynchroner      |                                 | (Prozessabbild /  |
+                       |  Befehlspuffer)   |                                 |  Thread-Safe DB)  |
+                       +-------------------+                                 +-------------------+
+                                 |                                                     ^
+                                 | (Consume)                                           | (Sync / R/W)
+                                 +------------------+       +--------------------------+
+                                                    |       |
+                                                    v       v
+[ INTERFACES ]                                  +-------------------+
+--------------                                  | SystemController  |
+                                                | (Der Dirigent)    |
+IAnalogToDigital  <---------------------------- |                   |
+IDigitalToAnalog  <---------------------------- | 1. InputSequence  |
+ILedDriver        <---- [ LedManager ] <------- | 2. ProcessSequence|
+ISerialInterface  <---- [ SerialStreamer ] <--- | 3. OutputSequence |
+                                                +-------------------+
+                                                    |       ^
+                                           (Fehler) v       | (Diagnose)
+                                              +-------------------+
+                                              | ErrorManager      |
+                                              | (Shadow-Register) |
+                                              +-------------------+
+
+=============================================================================================
+                       DETAILANSICHT: DER EVA-ZYKLUS (SystemController)
+=============================================================================================
+
+[ 1. INPUT (Lesen) ]
+  -> ReadAdcInputs()       : Liest I2C-ADCs -> MovingAverageFilter -> ProcessImager (Update Puffer)
+  -> ProcessSerialRx()     : SerialStreamer liest UART -> Timeout/Puffer -> API Event
+  -> FetchMailboxTargets() : Entnimmt asynchrone API-Ziele aus der Mailbox -> ProcessImager
+
+         |
+         | (Datenübergabe in den Process-Schritt)
+         v
+
+[ 2. PROCESS (Verarbeitung) ] - [MUTEX LOCKED]
+  -> ProcessImager::Sync   : Kopiert Update-Werte in das aktive Abbild, setzt Change-Flags.
+  -> RegulateAnalogOut()   : P-Regler (Vergleicht Soll-Wert mit Readback-ADC).
+                             Greift bei >10% Abweichung ein (Kurzschluss-Schutz -> 0V).
+  -> CheckDigitalOutSafety(): Prüft 80%-Referenzschwelle beim Schalten von SPS Signalen.
+  -> EvaluateErrorState()  : Prüft globale Fehler für die System-LED.
+
+         |
+         | (Change-Flags triggern Output-Updates)
+         v
+
+[ 3. OUTPUT (Schreiben) ]
+  -> UpdateDacOutputs()    : Sendet berechnete Regler-Werte aus Imager an den DAC.
+                             Schaltet GPIO-Fail-Safe bei I2C-Fehler.
+  -> UpdateDigitalOutputs(): Schaltet physikalische GPIOs basierend auf Imager-Status.
+  -> UpdateHardwareLeds()  : LedManager berechnet Farben (Rot=Float, Grün=OK) -> I2C LEDs.
+  -> UpdateSystemLed()     : LedManager fragt ErrorManager ab -> System-LED Rot/Grün.
+  -> ResolveErrors()       : ErrorManager überträgt Shadow-Errors in das offizielle Register.
+
+=============================================================================================
+                            ORDNERSTRUKTUR (Clean Architecture)
+=============================================================================================
+
+lib/
+├── Adapters/       # Konkrete Hardware-Treiber (Ads1x15, Dac8574, Lp50xx, EspAsyncServer)
+├── Interfaces/     # Abstrakte C++ Interfaces (analog_to_digital_interface.h, etc.)
+├── Logic/          # Reine, hardwareunabhängige Business-Logik
+│   ├── ApiController/      # REST API Routen und JSON-Parsing
+│   ├── Services/           # Hochspezialisierte Dienste 
+│   │                         (ErrorManager, ProcessImager, Mailbox, LedManager, WebBouncer)
+│   ├── SystemController/   # Der Kern-Controller (EVA-Zyklus)
+│   ├── Utils/              # Zustandslose Helfer (MovingAverage, Math)
+│   └── Web/                # Generiertes Frontend (web_page_index.h)
+└── Platform/       # Platform-Factory entscheidet ob PC-Simulation (Native) oder ESP32

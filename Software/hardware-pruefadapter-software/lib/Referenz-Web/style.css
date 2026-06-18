@@ -1,0 +1,633 @@
+/* --- KONFIGURATION & VARIABLEN --- */
+:root {
+    --bg-dark: #2b2b40;
+    --bg-card: #3e3e5e;
+    --bg-navigation: #232336;
+    --text-main: #ffffff;
+    --text-info: #aaaaaa;
+    --text-resolve: #00d2ff;
+    --accent: #436EB2;
+    --success: #28a745;
+    --warning: #ffcc00;
+    --danger: #dc3545;
+    --float: #555;
+    --toggle-off: #ccc;
+    --terminal-bg: #1e1e2e;
+    --terminal-text: #00ff9d;
+    --terminal-tx: #ffcc00;
+}
+
+/* ==========================================================================
+   1. GRUNDLAYOUT & STRUKTUR
+   ========================================================================== */
+body {
+    margin: 0;
+    font-family: "Source Sans Pro", "Helvetica Neue", "Calibri", arial, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-size: 14px;
+}
+
+header {
+    background-color: var(--accent);
+    padding: 5px 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+header h1 {
+    margin: 5px 0;
+    font-size: 1.3rem;
+}
+
+footer {
+    background-color: #1a1a2e;
+    text-align: center;
+    padding: 5px;
+    font-size: 0.85rem;
+    margin-top: auto;
+    color: var(--text-info);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer.simulation {
+    background-color: var(--warning);
+    color: black;
+    font-weight: bold;
+}
+
+.main-container {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.content {
+    flex: 1;
+    padding: 0 15px 15px 15px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+}
+
+.navigation {
+    width: 180px;
+    background-color: var(--bg-navigation);
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 5;
+}
+
+.navigation a {
+    color: var(--text-info);
+    text-decoration: none;
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.navigation a:hover {
+    background-color: rgba(67, 110, 178, 0.3);
+    color: var(--text-main);
+}
+
+.navigation a.active {
+    background-color: var(--accent);
+    color: white;
+    font-weight: bold;
+    border-left: 4px solid white;
+}
+
+/* ==========================================================================
+   2. KOMPONENTEN: LAYOUT & CONTAINER
+   ========================================================================== */
+.tab-pane {
+    display: block;
+    margin-bottom: 20px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.persistent-pane {
+    padding-top: 5px;
+}
+
+#persistent-system {
+    position: sticky;
+    top: 0;
+    margin-top: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: var(--bg-dark);
+    z-index: 50;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--bg-card);
+    border-radius: 6px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    flex: 1;
+    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.card .value-display {
+    margin-top: auto;
+}
+
+.status-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
+/* ==========================================================================
+   3. KOMPONENTEN: TYPOGRAFIE & TEXT
+   ========================================================================== */
+.section-title {
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 3px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
+
+#persistent-system .section-title {
+    margin-top: 0;
+}
+
+.card h3 {
+    margin: 0 0 5px 0;
+    font-size: 0.95rem;
+}
+
+.control-label {
+    font-size: 0.8rem;
+    color: var(--text-info);
+}
+
+.card>.control-label {
+    margin-top: 10px;
+    display: block;
+}
+
+.input-group .control-label {
+    margin: 0;
+    display: inline;
+    font-size: 0.9rem;
+}
+
+.value-display {
+    font-size: 1.4em;
+    font-weight: bold;
+    font-variant-numeric: tabular-nums;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* ==========================================================================
+   4. KOMPONENTEN: CONTROLS (INPUTS, BUTTONS)
+   ========================================================================== */
+.control-input,
+.control-select {
+    background-color: var(--bg-navigation);
+    color: white;
+    border: 1px solid #555;
+    padding: 4px 6px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.input-group {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.input-group .control-input {
+    width: 70px;
+}
+
+input[type="range"] {
+    accent-color: var(--accent);
+    cursor: pointer;
+    margin: 5px 0;
+}
+
+.btn {
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.btn-secondary {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-secondary:hover {
+    background-color: #777;
+}
+
+/* ==========================================================================
+   5. KOMPONENTEN: INDIKATOREN (LEDS, PROGRESS, BADGES)
+   ========================================================================== */
+.led {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    transition: 0.3s;
+    margin-right: 15px;
+}
+
+.led.off {
+    background-color: #555;
+    box-shadow: none;
+}
+
+.led.on {
+    background-color: var(--success);
+    box-shadow: 0 0 8px var(--success);
+}
+
+.led.fail {
+    background-color: var(--danger);
+    box-shadow: 0 0 8px var(--danger);
+}
+
+progress {
+    width: 100%;
+    height: 10px;
+    accent-color: var(--success);
+    margin-top: 2px;
+}
+
+.progress-track {
+    width: 100%;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    margin-top: 5px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background-color: var(--success);
+    transition: width 0.3s ease-out, background-color 0.3s ease;
+}
+
+.progress-fill.error {
+    background-color: var(--danger);
+}
+
+progress.error {
+    accent-color: var(--danger);
+}
+
+progress.error::-webkit-progress-value {
+    background-color: var(--danger);
+}
+
+progress.error::-moz-progress-bar {
+    background-color: var(--danger);
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-size: 0.7em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.status-badge.high {
+    background-color: var(--success);
+    color: white;
+}
+
+.status-badge.low {
+    background-color: var(--float);
+    color: white;
+}
+
+.status-badge.error {
+    background-color: var(--danger);
+    color: white;
+}
+
+.error-list {
+    margin: 5px 0 0 20px;
+    padding: 0;
+    list-style-type: square;
+    color: var(--danger);
+    font-size: 0.8rem;
+    max-height: 40px;
+    overflow-y: auto;
+    display: none;
+}
+
+.error-list.active {
+    display: block;
+}
+
+.error-list li {
+    margin-bottom: 2px;
+}
+
+/* ==========================================================================
+   6. KOMPONENTEN: SPEZIAL (SWITCH & TERMINAL)
+   ========================================================================== */
+.digital-out-card {
+    flex-direction: row !important;
+    padding: 0 !important;
+    overflow: hidden;
+}
+
+.digital-out-content {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.switch-vertical-container {
+    width: 50px;
+    background-color: rgba(0, 0, 0, 0.15);
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.switch-vertical {
+    position: relative;
+    display: inline-block;
+    width: 24px;
+    height: 100%;
+    min-height: 70px;
+}
+
+.switch-vertical input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider-vertical {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--toggle-off);
+    transition: .4s;
+    border-radius: 24px;
+}
+
+.slider-vertical:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.switch-vertical input:checked+.slider-vertical {
+    background-color: var(--success);
+}
+
+.switch-vertical input:checked+.slider-vertical:before {
+    bottom: calc(100% - 21px);
+}
+
+.toolbar {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
+.toolbar-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.toolbar-group .control-select {
+    width: auto;
+}
+
+.toolbar-actions {
+    margin-left: auto;
+    display: flex;
+    gap: 10px;
+}
+
+.terminal-log {
+    background-color: var(--terminal-bg);
+    color: var(--terminal-text);
+    font-family: 'Courier New', monospace;
+    height: 120px;
+    overflow-y: auto;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #555;
+    font-size: 0.85rem;
+    white-space: pre-wrap;
+}
+
+.log-entry-rx {
+    color: var(--terminal-text);
+}
+
+.log-entry-tx {
+    color: var(--terminal-tx);
+}
+
+.log-entry-sys {
+    color: var(--text-info);
+    font-style: italic;
+}
+
+.log-entry-resolve {
+    color: var(--text-resolve);
+    font-weight: bold;
+}
+
+.log-time {
+    color: #6e6e8e;
+    margin-right: 8px;
+    font-size: 0.85em;
+}
+
+.log-info {
+    color: #a6e22e;
+}
+
+.log-warn {
+    color: var(--warning);
+}
+
+.log-error {
+    color: var(--danger);
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   7. RESPONSIVE (MOBILE)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+
+    .navigation {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .navigation a {
+        flex: 1;
+        text-align: center;
+        border: none;
+        border-bottom: 3px solid transparent;
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .navigation a.active {
+        border-left: none;
+        border-bottom: 3px solid white;
+    }
+
+    .input-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .tab-pane {
+        display: none;
+        margin-bottom: 0;
+    }
+
+    .tab-pane.active {
+        display: block;
+    }
+}
+
+/* ==========================================================================
+   8. TABELLEN (DIAGNOSE)
+   ========================================================================== */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.styled-table thead tr {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: var(--text-info);
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.styled-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ==========================================================================
+   9. ANIMATIONEN & TRENDS (PHASE 3)
+   ========================================================================== */
+
+.trend-arrow {
+    font-size: 0.85em;
+    margin-left: 8px;
+    display: inline-block;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.trend-up {
+    color: var(--warning);
+    transform: translateY(-2px);
+}
+
+.trend-down {
+    color: var(--text-resolve);
+    transform: translateY(2px);
+}
+
+.trend-stable {
+    color: var(--text-info);
+    opacity: 0.5;
+}

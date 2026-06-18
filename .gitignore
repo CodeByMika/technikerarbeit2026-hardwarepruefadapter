@@ -1,0 +1,37 @@
+# Packages #
+############
+# it's better to unpack these files and commit the raw source 
+# git has its own built in compression methods 
+*.7z 
+*.dmg 
+*.gz 
+*.iso 
+*.jar 
+*.rar 
+*.tar 
+*.zip 
+
+# KiCad Backups & Temporäre Dateien #
+#####################################
+
+# Spezifische Backup-Ordner
+/Hardware/hardware-pruefadapter/hardware-pruefadapter-backups/** 
+
+# Generelle KiCad Backup-Ordner
+*-backups/
+
+# KiCad Backup-Dateien (Schaltpläne, Platinen, Symbole)
+*.bak
+*-bak
+*.kicad_sch-bak
+*.kicad_pcb-bak
+*.kicad_sym-bak
+*.bck
+
+# Automatische Zwischenspeicherungen (Autosave)
+_autosave-*
+*.tmp
+
+# KiCad Cache und lokale Benutzereinstellungen
+fp-info-cache
+*.kicad_prl

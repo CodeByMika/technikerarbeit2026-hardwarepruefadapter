@@ -1,0 +1,11 @@
+ZDiode_24V_mmsz5225_to_mmsz5267		https://www.mouser.de/ProductDetail/Vishay/MMSZ5226C-HE3_A-08?qs=Imq1NPwxi774wPyD3tjngw%3D%3D
+
+
+
+MOSFETs:
+
+24V:
+TSM05N03		https://www.reichelt.de/de/de/shop/produkt/mosfet_n-ch_30v_5a_0_046r_sot-223-254918	
+TSM042N03CS		https://www.reichelt.de/de/de/shop/produkt/mosfet_n-ch_30v_30a_7w_0_0042r_so-8-379909
+IRF 7832PbF		https://www.reichelt.de/de/de/shop/produkt/mosfet_n-ch_30v_20a_2_5w_so-8-129794
+IRLR8743PbF		https://www.reichelt.de/de/de/shop/produkt/mosfet_n-ch_30v_160a_135w_to-251aa-90380

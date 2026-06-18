@@ -1,0 +1,110 @@
+<div id="tab-analog" class="tab-pane">
+    <h2 class="section-title">Analog I/O Steuerung</h2>
+    <h3>Eingänge (0-24V)</h3>
+    <div class="card-section">
+        <div class="card">
+            <h3>Eingang 1</h3>
+            <div class="value-display">
+                <span id="analog-in-1-value">0.00</span><span class="control-label">V</span>
+            </div>
+            <div class="progress-track">
+                <div class="progress-fill" id="analog-in-1-bar" data-max="30"></div>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Eingang 2</h3>
+            <div class="value-display">
+                <span id="analog-in-2-value">0.00</span><span class="control-label">V</span>
+            </div>
+            <div class="progress-track">
+                <div class="progress-fill" id="analog-in-2-bar" data-max="30"></div>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Eingang 3</h3>
+            <div class="value-display">
+                <span id="analog-in-3-value">0.00</span><span class="control-label">V</span>
+            </div>
+            <div class="progress-track">
+                <div class="progress-fill" id="analog-in-3-bar" data-max="30"></div>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Eingang 4</h3>
+            <div class="value-display">
+                <span id="analog-in-4-value">0.00</span><span class="control-label">V</span>
+            </div>
+            <div class="progress-track">
+                <div class="progress-fill" id="analog-in-4-bar" data-max="30"></div>
+            </div>
+        </div>
+    </div>
+
+    <h3>Ausgänge</h3>
+    <div class="card-section">
+        <div class="card">
+            <h3>Ausgang 1</h3>
+            <input type="range" id="analog-out-1-slider" min="0" max="24" step="0.1" value="0">
+            <div class="input-group">
+                <input type="number" id="analog-out-1-number" value="0.00" step="0.1" class="control-input">
+                <span class="control-label">V</span>
+                <button id="analog-out-1-btn-set" class="btn">Set</button>
+            </div>
+            <label class="control-label">Ist-Wert (Readback):</label>
+            <div class="value-display">
+                <span id="analog-out-1-readback-value">0.00</span><span class="control-label">V</span>
+            </div>
+            <div class="progress-track">
+                <div class="progress-fill" id="analog-out-1-bar-visual" data-max="30"></div>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Ausgang 2</h3>
+            <input type="range" id="analog-out-2-slider" min="0" max="24" step="0.1" value="0">
+            <div class="input-group">
+                <input type="number" id="analog-out-2-number" value="0.00" step="0.1" class="control-input">
+                <span class="control-label">V</span>
+                <button id="analog-out-2-btn-set" class="btn">Set</button>
+            </div>
+            <label class="control-label">Ist-Wert (Readback):</label>
+            <div class="value-display">
+                <span id="analog-out-2-readback-value">0.00</span><span class="control-label">V</span>
+            </div>
+            <div class="progress-track">
+                <div class="progress-fill" id="analog-out-2-bar-visual" data-max="30"></div>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Ausgang 3</h3>
+            <input type="range" id="analog-out-3-slider" min="0" max="24" step="0.1" value="0">
+            <div class="input-group">
+                <input type="number" id="analog-out-3-number" value="0.00" step="0.1" class="control-input">
+                <span class="control-label">V</span>
+                <button id="analog-out-3-btn-set" class="btn">Set</button>
+            </div>
+            <label class="control-label">Ist-Wert (Readback):</label>
+            <div class="value-display">
+                <span id="analog-out-3-readback-value">0.00</span><span class="control-label">V</span>
+            </div>
+            <div class="progress-track">
+                <div class="progress-fill" id="analog-out-3-bar-visual" data-max="30"></div>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Ausgang 4</h3>
+            <input type="range" id="analog-out-4-slider" min="0" max="24" step="0.1" value="0">
+            <div class="input-group">
+                <input type="number" id="analog-out-4-number" value="0.00" step="0.1" class="control-input">
+                <span class="control-label">V</span>
+                <button id="analog-out-4-btn-set" class="btn">Set</button>
+            </div>
+            <label class="control-label">Ist-Wert (Readback):</label>
+            <div class="value-display">
+                <span id="analog-out-4-readback-value">0.00</span><span class="control-label">V</span>
+            </div>
+            <div class="progress-track">
+                <div class="progress-fill" id="analog-out-4-bar-visual" data-max="30"></div>
+            </div>
+        </div>
+    </div>
+</div>

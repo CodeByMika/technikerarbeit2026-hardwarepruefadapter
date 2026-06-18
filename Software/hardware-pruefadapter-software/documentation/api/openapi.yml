@@ -1,0 +1,495 @@
+openapi: "3.1.2"
+info:
+  title: Hardware Prüfadapter API
+  description: |
+    REST API zur Steuerung des ESP32 Prüfadapters.
+    Dient zur Abfrage von Sensorwerten (Analog/Digital) und zum Setzen von Ausgängen.
+    
+    **Neu in 2.1.0:** Alle Endpunkte verfügen nun über einen integrierten Überlastungsschutz (Bouncer). 
+    Wird das Limit an gleichzeitigen Verbindungen überschritten, antwortet die API sofort mit HTTP 503.
+  version: "2.1.0"
+  contact:
+    name: Techniker Team 2026 (Mika Müller, Nico Stein, Lukas Horst)
+    email: m.mueller@sotec.eu
+
+servers:
+  - url: http://192.168.4.1/api/v1
+    description: ESP32 Production Server
+  - url: http://localhost:8080/api/v1/
+    description: Local Simulation (WSL/PC)
+
+paths:
+  # ==========================================
+  # SYSTEM STATUS & LOGS
+  # ==========================================
+  /system/status:
+    get:
+      summary: Systemstatus abrufen
+      description: Liefert Vitalwerte (Uptime, RAM) und den Fehlerstatus des Systems.
+      tags:
+        - System
+      responses:
+        "200":
+          description: Erfolgreiche Abfrage
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SystemStatus"
+        "503":
+          $ref: "#/components/responses/503Overload"
+
+  /system/logs:
+    get:
+      summary: System-Logs (Historie) abrufen
+      description: Lädt die im RAM gepufferten Log-Einträge. Dient zur initialen Befüllung des Terminals.
+      tags:
+        - System
+      responses:
+        "200":
+          description: Erfolgreiche Abfrage
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LogsResponse"
+        "503":
+          $ref: "#/components/responses/503Overload"
+
+  /system/logs/stream:
+    get:
+      summary: Live-Log-Stream (Server-Sent Events)
+      description: |
+        Öffnet eine dauerhafte SSE-Verbindung. Der Server pusht neue Daten in Echtzeit.
+        Das System nutzt verschiedene Event-Typen:
+        - Event 'log': Reguläre System-Logs.
+        - Event 'serial': Serielle Datenblöcke aus den UART Puffern. Format: {"source": "UART|RS232|RS485", "data": "..."}
+      tags:
+        - System
+      responses:
+        "200":
+          description: SSE Verbindung hergestellt.
+          content:
+            text/event-stream:
+              schema:
+                type: string
+        "503":
+          $ref: "#/components/responses/503Overload"
+
+  # ==========================================
+  # I/O BULK OPERATIONS (Das ganze Dashboard auf einmal)
+  # ==========================================
+  /io:
+    get:
+      summary: Komplettes I/O Prozessabbild abrufen
+      description: Liefert alle analogen und digitalen Eingänge sowie die Readback-Werte und Zustände der Ausgänge in einem einzigen Request. (Performance-optimiert für Dashboards).
+      tags:
+        - I/O
+      responses:
+        "200":
+          description: Erfolgreiche Abfrage des gesamten I/O-Status.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/IoAllResponse"
+        "503":
+          $ref: "#/components/responses/503Overload"
+
+  # ==========================================
+  # I/O EINZELKANÄLE
+  # ==========================================
+  /io/{technologyType}/{direction}/{channel}:
+    get:
+      summary: Einzelnen Kanal abrufen
+      description: Lädt den Wert eines spezifischen Kanals.
+      tags:
+        - I/O
+      parameters:
+        - name: technologyType
+          in: path
+          required: true
+          schema:
+            type: string
+            enum: [analog, digital]
+        - name: direction
+          in: path
+          required: true
+          schema:
+            type: string
+            enum: [input, output]
+        - name: channel
+          in: path
+          required: true
+          description: Kanalnummer (0-3)
+          schema:
+            type: integer
+            minimum: 0
+            maximum: 3
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/AnalogResponse"
+                  - $ref: "#/components/schemas/DigitalResponse"
+        "503":
+          $ref: "#/components/responses/503Overload"
+
+    put:
+      summary: Einzelnen Ausgangskanal setzen
+      description: Schreibt einen neuen Zielwert für einen spezifischen Ausgangskanal in die Prozess-Mailbox.
+      tags:
+        - I/O
+      parameters:
+        - name: technologyType
+          in: path
+          required: true
+          schema:
+            type: string
+            enum: [analog, digital]
+        - name: direction
+          in: path
+          required: true
+          schema:
+            type: string
+            enum: [output]
+        - name: channel
+          in: path
+          required: true
+          description: Kanalnummer (0-3)
+          schema:
+            type: integer
+            minimum: 0
+            maximum: 3
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - $ref: "#/components/schemas/AnalogOutputRequest"
+                - $ref: "#/components/schemas/DigitalOutputRequest"
+      responses:
+        "200":
+          description: Befehl erfolgreich empfangen.
+        "400":
+          description: Ungültige Eingabe.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+        "503":
+          $ref: "#/components/responses/503Overload"
+
+  # ==========================================
+  # CONFIGURATION (Referenzspannungen & I2C)
+  # ==========================================
+  /io/digital/{direction}/{channel}/reference:
+    put:
+      summary: Referenzspannung für einen digitalen Kanal setzen
+      description: Konfiguriert die Bezugsspannung (z.B. 1.8V, 5V, 24V) für die 20/80 Auswertung eines spezifischen Kanals.
+      tags:
+        - Config
+      parameters:
+        - name: direction
+          in: path
+          required: true
+          schema:
+            type: string
+            enum: [input, output]
+        - name: channel
+          in: path
+          required: true
+          description: Kanalnummer (0-3)
+          schema:
+            type: integer
+            minimum: 0
+            maximum: 3
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/DigitalReferenceRequest"
+      responses:
+        "200":
+          description: Referenzspannung erfolgreich gesetzt.
+        "400":
+          description: Ungültige Eingabe.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+        "503":
+          $ref: "#/components/responses/503Overload"
+
+  /i2c/devices:
+    get:
+      summary: Liste aller konfigurierten I2C-Geräte
+      tags:
+        - Config
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/I2CDeviceList"
+        "503":
+          $ref: "#/components/responses/503Overload"
+
+  # ==========================================
+  # SERIAL COMMUNICATION (UART, RS232, RS485)
+  # ==========================================
+  /serial/tx:
+    put:
+      summary: Daten über eine serielle Schnittstelle senden (TX)
+      description: |
+        Sendet einen Text-Payload an die spezifizierte Hardware-Schnittstelle. 
+        Das Frontend sendet rohe Daten.
+      tags:
+        - Serial
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SerialTxRequest"
+      responses:
+        "200":
+          description: Daten erfolgreich in den Hardware-Sende-Puffer geschrieben.
+        "400":
+          description: Ungültige Eingabe oder Schnittstelle nicht bereit.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+        "503":
+          $ref: "#/components/responses/503Overload"
+
+  /serial/config:
+    put:
+      summary: Konfiguration einer seriellen Schnittstelle ändern
+      description: |
+        Ändert zur Laufzeit Hardware-Parameter (aktuell primär Baudrate). 
+      tags:
+        - Serial
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SerialConfigRequest"
+      responses:
+        "200":
+          description: Konfiguration erfolgreich übernommen.
+        "400":
+          description: Ungültige Konfigurationsparameter.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+        "503":
+          $ref: "#/components/responses/503Overload"
+
+components:
+  responses:
+    503Overload:
+      description: Serverüberlastung. Maximale Anzahl an Client-Verbindungen erreicht. Bitte Retry (z.B. nach 500ms) ausführen.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/OverloadError"
+
+  schemas:
+    # --- System ---
+    SystemStatus:
+      type: object
+      required: [uptime_ms, heap_free, error_count, errors]
+      properties:
+        uptime_ms:
+          type: integer
+          example: 125040
+        heap_free:
+          type: integer
+          example: 145000
+        status:
+          type: string
+          example: "running"
+        error_count:
+          type: integer
+          example: 1
+        errors:
+          type: array
+          items:
+            type: string
+          example:
+            - "[ADC 1] Device nicht gefunden"
+
+    LogsResponse:
+      type: object
+      required: [logs]
+      properties:
+        logs:
+          type: array
+          items:
+            type: string
+
+    # --- I/O Bulk ---
+    IoAllResponse:
+      type: object
+      properties:
+        analog_in:
+          type: array
+          description: Array der Analog In Werte in mV (Index 0-3 = Kanal 1-4)
+          items:
+            type: integer
+          example: [1200, 2500, 0, 4800]
+        analog_out:
+          type: array
+          description: Array der Analog Out Readback-Werte in mV
+          items:
+            type: integer
+          example: [5000, 0, 0, 1000]
+        digital_in:
+          type: array
+          description: Array der Digital In Zustände und Spannungen
+          items:
+            $ref: "#/components/schemas/DigitalStateValue"
+        digital_out:
+          type: array
+          description: Array der Digital Out Zustände und Spannungen
+          items:
+            $ref: "#/components/schemas/DigitalStateValue"
+
+    DigitalStateValue:
+      type: object
+      properties:
+        state:
+          type: integer
+          description: "1 = HIGH, 0 = LOW, -1 = FLOAT/ERROR"
+        value:
+          type: integer
+          description: Die gemessene Spannung in mV
+
+    # --- Analog ---
+    AnalogResponse:
+      type: object
+      properties:
+        technologyType:
+          type: string
+          enum: [analog]
+        direction:
+          type: string
+          enum: [input, output]
+        channel:
+          type: integer
+        value:
+          type: integer
+        unit:
+          type: string
+          default: "mV"
+
+    # --- Digital ---
+    DigitalResponse:
+      type: object
+      properties:
+        technologyType:
+          type: string
+          enum: [digital]
+        direction:
+          type: string
+          enum: [input, output]
+        channel:
+          type: integer
+        state:
+          type: integer
+        value:
+          type: integer
+        unit:
+          type: string
+          default: "mV"
+
+    # --- Requests ---
+    AnalogOutputRequest:
+      type: object
+      required: [value]
+      properties:
+        value:
+          type: integer
+          minimum: 0
+          maximum: 24000
+
+    DigitalOutputRequest:
+      type: object
+      required: [state]
+      properties:
+        state:
+          type: boolean
+
+    DigitalReferenceRequest:
+      type: object
+      required: [voltage_mv]
+      properties:
+        voltage_mv:
+          type: integer
+          enum: [1800, 3300, 5000, 12000, 24000]
+
+    # --- Config ---
+    I2CDevice:
+      type: object
+      properties:
+        address:
+          type: string
+        bus:
+          type: integer
+        name:
+          type: string
+
+    I2CDeviceList:
+      type: array
+      items:
+        $ref: "#/components/schemas/I2CDevice"
+
+    # --- Serial Communication ---
+    SerialTxRequest:
+      type: object
+      required: [interface, payload]
+      properties:
+        interface:
+          type: string
+          enum: [UART, RS232, RS485]
+          description: Die Ziel-Schnittstelle für den Sendevorgang.
+        payload:
+          type: string
+          description: Der zu sendende Datenstring (ohne Zeilenumbruch, dieser wird vom C++ Adapter gemanagt).
+          example: "AT+STATUS"
+
+    SerialConfigRequest:
+      type: object
+      required: [interface, baudrate]
+      properties:
+        interface:
+          type: string
+          enum: [UART, RS232, RS485]
+        baudrate:
+          type: integer
+          enum: [9600, 19200, 38400, 57600, 115200]
+          example: 115200
+
+    # --- Error ---
+    ErrorModel:
+      type: object
+      properties:
+        message:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+          
+    OverloadError:
+      type: object
+      properties:
+        error:
+          type: string
+          example: "Service Unavailable (Overload)"

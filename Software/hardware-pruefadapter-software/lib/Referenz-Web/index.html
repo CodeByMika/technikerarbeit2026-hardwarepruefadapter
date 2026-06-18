@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prozesssteuerung Dashboard</title>
+    <style>
+        /* === INJECT_CSS === */
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Hardware Prüfadapter</h1>
+    </header>
+
+    <div class="main-container">
+        <nav class="navigation">
+            <a id="nav-analog" class="tab-link active" onclick="switchTab('analog')">Analog I/O</a>
+            <a id="nav-digital" class="tab-link" onclick="switchTab('digital')">Digital I/O</a>
+            <a id="nav-diagnose" class="tab-link" onclick="switchTab('diagnose')">Diagnose</a>
+        </nav>
+
+        <main class="content">
+            <div id="persistent-system" class="persistent-pane">
+                <h2 class="section-title">System Status</h2>
+                <div class="card-section">
+                    <div class="card">
+                        <h3>Allgemein</h3>
+                        <div class="status-items">
+                            <div class="system-status"><span class="led off" id="system-fail-led"></span>System bereit
+                            </div>
+                            <div class="system-status">
+                                <span class="led off" id="system-error-led"></span><span id="system-error-text">System
+                                    Fehler (0)</span>
+                            </div>
+                        </div>
+                        <ul id="system-error-list" class="error-list"></ul>
+                    </div>
+                    <div class="card">
+                        <h3>Diagnose</h3>
+                        <div class="status-items">
+                            <div class="system-fail"><span class="led off" id="analog-fail-led"></span>Analog</div>
+                            <div class="system-fail"><span class="led off" id="digital-fail-led"></span>Digital</div>
+                            <div class="system-fail"><span class="led off" id="comm-fail-led"></span>Interface</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            /* === INJECT_ANALOG === */
+
+            /* === INJECT_DIGITAL === */
+
+            /* === INJECT_DIAGNOSE === */
+
+            /* === INJECT_TERMINAL === */
+
+            /* === INJECT_LOG === */
+
+
+
+        </main>
+    </div>
+
+    <footer id="sys-footer">
+        System Status: Verbinde... | Uptime: 0h 0m 0s
+    </footer>
+
+    <script>
+        /* === INJECT_JS === */
+    </script>
+
+</body>
+
+</html>

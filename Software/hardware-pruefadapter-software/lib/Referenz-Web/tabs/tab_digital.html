@@ -1,0 +1,190 @@
+<div id="tab-digital" class="tab-pane">
+    <h2 class="section-title">Digital I/O Steuerung</h2>
+    <h3>Eingänge (0-24V)</h3>
+    <div class="card-section">
+        <div class="card">
+            <h3>Eingang 1</h3>
+            <label class="control-label">Referenzspannung:</label>
+            <select id="digital-in-ref-1" class="control-select">
+                <option value="1800">1.8 V (TTL)</option>
+                <option value="3300">3.3 V (CMOS)</option>
+                <option value="5000">5.0 V (TTL)</option>
+                <option value="12000">12.0 V</option>
+                <option value="24000" selected>24.0 V (SPS)</option>
+            </select>
+            <div class="value-display">
+                <span><span id="digital-in-1-value">0.00</span> <span class="control-label">V</span></span>
+                <span id="digital-in-1-badge" class="status-badge low">LOW</span>
+            </div>
+            <div class="progress-track">
+                <div class="progress-fill" id="digital-in-1-bar" data-max="30"></div>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Eingang 2</h3>
+            <label class="control-label">Referenzspannung:</label>
+            <select id="digital-in-ref-2" class="control-select">
+                <option value="1800">1.8 V (TTL)</option>
+                <option value="3300">3.3 V (CMOS)</option>
+                <option value="5000">5.0 V (TTL)</option>
+                <option value="12000">12.0 V</option>
+                <option value="24000" selected>24.0 V (SPS)</option>
+            </select>
+            <div class="value-display">
+                <span><span id="digital-in-2-value">0.00</span> <span class="control-label">V</span></span>
+                <span id="digital-in-2-badge" class="status-badge low">LOW</span>
+            </div>
+            <div class="progress-track">
+                <div class="progress-fill" id="digital-in-2-bar" data-max="30"></div>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Eingang 3</h3>
+            <label class="control-label">Referenzspannung:</label>
+            <select id="digital-in-ref-3" class="control-select">
+                <option value="1800">1.8 V (TTL)</option>
+                <option value="3300">3.3 V (CMOS)</option>
+                <option value="5000">5.0 V (TTL)</option>
+                <option value="12000">12.0 V</option>
+                <option value="24000" selected>24.0 V (SPS)</option>
+            </select>
+            <div class="value-display">
+                <span><span id="digital-in-3-value">0.00</span> <span class="control-label">V</span></span>
+                <span id="digital-in-3-badge" class="status-badge low">LOW</span>
+            </div>
+            <div class="progress-track">
+                <div class="progress-fill" id="digital-in-3-bar" data-max="30"></div>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Eingang 4</h3>
+            <label class="control-label">Referenzspannung:</label>
+            <select id="digital-in-ref-4" class="control-select">
+                <option value="1800">1.8 V (TTL)</option>
+                <option value="3300">3.3 V (CMOS)</option>
+                <option value="5000">5.0 V (TTL)</option>
+                <option value="12000">12.0 V</option>
+                <option value="24000" selected>24.0 V (SPS)</option>
+            </select>
+            <div class="value-display">
+                <span><span id="digital-in-4-value">0.00</span> <span class="control-label">V</span></span>
+                <span id="digital-in-4-badge" class="status-badge low">LOW</span>
+            </div>
+            <div class="progress-track">
+                <div class="progress-fill" id="digital-in-4-bar" data-max="30"></div>
+            </div>
+        </div>
+    </div>
+
+    <h3>Ausgänge</h3>
+    <div class="card-section">
+        <div class="card digital-out-card">
+            <div class="digital-out-content">
+                <h3>Ausgang 1</h3>
+                <label class="control-label">Referenzspannung:</label>
+                <select id="digital-out-ref-1" class="control-select">
+                    <option value="1800">1.8 V (TTL)</option>
+                    <option value="3300">3.3 V (CMOS)</option>
+                    <option value="5000">5.0 V (TTL)</option>
+                    <option value="12000">12.0 V</option>
+                    <option value="24000" selected>24.0 V (SPS)</option>
+                </select>
+                <div class="value-display">
+                    <span><span id="digital-out-1-value">0.00</span> <span class="control-label">V</span></span>
+                    <span id="digital-out-1-badge" class="status-badge low">LOW</span>
+                    <span class="led off" id="digital-out-1-led"></span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" id="digital-out-1-bar" data-max="30"></div>
+                </div>
+            </div>
+            <div class="switch-vertical-container">
+                <label class="switch-vertical">
+                    <input type="checkbox" id="digital-out-1-toggle">
+                    <span class="slider-vertical"></span>
+                </label>
+            </div>
+        </div>
+        <div class="card digital-out-card">
+            <div class="digital-out-content">
+                <h3>Ausgang 2</h3>
+                <label class="control-label">Referenzspannung:</label>
+                <select id="digital-out-ref-2" class="control-select">
+                    <option value="1800">1.8 V (TTL)</option>
+                    <option value="3300">3.3 V (CMOS)</option>
+                    <option value="5000">5.0 V (TTL)</option>
+                    <option value="12000">12.0 V</option>
+                    <option value="24000" selected>24.0 V (SPS)</option>
+                </select>
+                <div class="value-display">
+                    <span><span id="digital-out-2-value">0.00</span> <span class="control-label">V</span></span>
+                    <span id="digital-out-2-badge" class="status-badge low">LOW</span>
+                    <span class="led off" id="digital-out-2-led"></span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" id="digital-out-2-bar" data-max="30"></div>
+                </div>
+            </div>
+            <div class="switch-vertical-container">
+                <label class="switch-vertical">
+                    <input type="checkbox" id="digital-out-2-toggle">
+                    <span class="slider-vertical"></span>
+                </label>
+            </div>
+        </div>
+        <div class="card digital-out-card">
+            <div class="digital-out-content">
+                <h3>Ausgang 3</h3>
+                <label class="control-label">Referenzspannung:</label>
+                <select id="digital-out-ref-3" class="control-select">
+                    <option value="1800">1.8 V (TTL)</option>
+                    <option value="3300">3.3 V (CMOS)</option>
+                    <option value="5000">5.0 V (TTL)</option>
+                    <option value="12000">12.0 V</option>
+                    <option value="24000" selected>24.0 V (SPS)</option>
+                </select>
+                <div class="value-display">
+                    <span><span id="digital-out-3-value">0.00</span> <span class="control-label">V</span></span>
+                    <span id="digital-out-3-badge" class="status-badge low">LOW</span>
+                    <span class="led off" id="digital-out-3-led"></span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" id="digital-out-3-bar" data-max="30"></div>
+                </div>
+            </div>
+            <div class="switch-vertical-container">
+                <label class="switch-vertical">
+                    <input type="checkbox" id="digital-out-3-toggle">
+                    <span class="slider-vertical"></span>
+                </label>
+            </div>
+        </div>
+        <div class="card digital-out-card">
+            <div class="digital-out-content">
+                <h3>Ausgang 4</h3>
+                <label class="control-label">Referenzspannung:</label>
+                <select id="digital-out-ref-4" class="control-select">
+                    <option value="1800">1.8 V (TTL)</option>
+                    <option value="3300">3.3 V (CMOS)</option>
+                    <option value="5000">5.0 V (TTL)</option>
+                    <option value="12000">12.0 V</option>
+                    <option value="24000" selected>24.0 V (SPS)</option>
+                </select>
+                <div class="value-display">
+                    <span><span id="digital-out-4-value">0.00</span> <span class="control-label">V</span></span>
+                    <span id="digital-out-4-badge" class="status-badge low">LOW</span>
+                    <span class="led off" id="digital-out-4-led"></span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" id="digital-out-4-bar" data-max="30"></div>
+                </div>
+            </div>
+            <div class="switch-vertical-container">
+                <label class="switch-vertical">
+                    <input type="checkbox" id="digital-out-4-toggle">
+                    <span class="slider-vertical"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+</div>

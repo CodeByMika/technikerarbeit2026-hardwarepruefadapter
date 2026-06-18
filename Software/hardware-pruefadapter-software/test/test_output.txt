@@ -1,0 +1,1885 @@
+================ ÜBERSICHT ================
+Verbosity level can be increased via `-v, -vv, or -vvv` option
+Collected 1 tests
+
+Processing test_desktop in native environment
+--------------------------------------------------------------------------------
+Building...
+Testing...
+[02:25: ApiControllerTest.RoutesAreSuccessfullyRegistered: 30.770] ========== SIMULATION ==========	[PASSED]
+[02:25: ApiControllerTest.GetIoAllReturnsCorrectJsonSchema: 30.770] ========== SIMULATION ==========	[PASSED]
+[02:25: ApiControllerTest.PutAnalogOutputValidValueSucceeds: 30.771] ========== SIMULATION ==========	[PASSED]
+[02:25: ApiControllerTest.PutAnalogOutputExceedsMaximumFails: 30.773] ========== SIMULATION ==========	[PASSED]
+[02:25: ApiControllerTest.PutWithInvalidJsonFailsGracefully: 30.773] ========== SIMULATION ==========	[PASSED]
+[02:25: ApiControllerTest.PutDigitalOutputValidValueSucceeds: 30.773] ========== SIMULATION ==========	[PASSED]
+[02:25: ApiControllerTest.PutDigitalReferenceChangesSystemConfig: 30.773] ========== SIMULATION ==========	[PASSED]
+[02:25: ApiControllerTest.PutSerialTxSendsDataToCorrectUart: 30.774] ========== SIMULATION ==========	[PASSED]
+[02:25: SystemControllerTest.InitializationSucceedsWithValidHardware: 30.774] ========== SIMULATION ==========	[PASSED]
+[02:25: SystemControllerTest.InitializationFailsWhenPointerIsNullAdc: 30.774] ========== SIMULATION ==========	[PASSED]
+[02:25: SystemControllerTest.InitializationFailsWhenPointerIsNullDac: 30.775] ========== SIMULATION ==========	[PASSED]
+[02:25: SystemControllerTest.InitializationFailsWhenPointerIsNullLed: 30.775] ========== SIMULATION ==========	[PASSED]
+[02:25: SystemControllerTest.AnalogOutputTargetIsProcessedAndSentToDac: 30.775] ========== SIMULATION ==========	[PASSED]
+[02:25: SystemControllerTest.HardwareErrorIsLoggedProperly: 30.775] ========== SIMULATION ==========	[PASSED]
+[02:25: SystemControllerTest.DigitalInputThresholdRule: 30.775] ========== SIMULATION ==========	[PASSED]
+[02:25: SystemControllerTest.DigitalInputThresholdRuleHigh: 30.776] ========== SIMULATION ==========	[PASSED]
+[02:25: SystemControllerTest.DigitalInputThresholdRuleFloat: 30.777] ========== SIMULATION ==========	[PASSED]
+[02:25: SystemControllerTest.AnalogInputMovingAverageFiltersNoise: 30.778] ========== SIMULATION ==========	[PASSED]
+[02:25: SystemControllerTest.ErrorAutoRecoveryWorks: 30.780] ========== SIMULATION ==========	[PASSED]
+[02:25: SystemControllerTest.AnalogOutputReadbackIsProcessedCorrectly: 30.780] ========== SIMULATION ==========	[PASSED]
+[02:25: SystemControllerTest.SerialRxBuffersAndTriggersCallback: 30.782] ========== SIMULATION ==========	[PASSED]
+[02:25: SystemControllerTest.ReadAdcInputs_ValidDataIsMappedCorrectly: 30.842] ========== SIMULATION ==========	[PASSED]
+[02:25: SystemControllerTest.ReadAdcInputs_I2cErrorResetsFilterAndValue: 30.843] ========== SIMULATION ==========	[PASSED]
+[02:25: SystemControllerTest.ProcessSequence_CheckAndRegulateAnalogOut_RegulatesVoltage: 30.844] ========== SIMULATION ==========	[PASSED]
+[02:25: SystemControllerTest.ProcessSequence_CheckAndRegulateAnalogOut_ShortCircuitProtection: 30.847] ========== SIMULATION ==========	[PASSED]
+[02:25: SystemControllerTest.ProcessSequence_CheckDigitalOutSafety_DetectsVoltageDrop: 30.849] ========== SIMULATION ==========	[PASSED]
+[02:25: SystemControllerTest.OutputSequence_UpdateDacOutputs_FailSafeOnHardwareError: 30.852] ========== SIMULATION ==========	[PASSED]
+[02:25: SystemControllerTest.OutputSequence_UpdateHardwareLeds_FloatStateIsRed: 30.853] ========== SIMULATION ==========	[PASSED]
+[02:25: SystemControllerTest.OutputSequence_UpdateSystemLed_ReactsToErrors: 30.854] ========== SIMULATION ==========	[PASSED]
+[02:25: SystemControllerTest.ProcessSequence_CheckAndRegulateAnalogOut_CapsAtMaximumVoltage: 30.854] ========== SIMULATION ==========	[PASSED]
+[02:25: SystemControllerTest.ProcessSequence_CheckAndRegulateAnalogOut_CapsAtMinimumVoltage: 30.857] ========== SIMULATION ==========	[PASSED]
+[02:25: SystemControllerTest.ProcessSequence_CheckDigitalOutSafety_WaitsForGracePeriod: 30.859] ========== SIMULATION ==========	[PASSED]
+[02:25: SystemControllerTest.ProcessSequence_CheckDigitalOutSafety_PassesIfHardwareSwitchesInTime: 30.862] ========== SIMULATION ==========	[PASSED]
+[02:25: ErrorManagerTest.LogsNewErrorCorrectly: 30.865] [WARN] [ADC 1] Device nicht gefunden oder antwortet nicht	[PASSED]
+[02:25: ErrorManagerTest.AutoRecoversFromResolvedError: 30.865] [WARN] [I2C Bus 2] Allgemeines I2C Kommunikations Problem	[PASSED]
+[02:25: ErrorManagerTest.IgnoresDuplicateErrorsInSameCycle: 30.865] [WARN] [I2C Bus 2] Allgemeines I2C Kommunikations Problem	[PASSED]
+[02:25: ErrorManagerTest.PreventsBufferOverflowOnMassiveFailures: 30.865] [WARN] [Test 0] Wert außerhalb des Bereichs	[PASSED]
+[02:25: HardwareBootstrapperTest.BootFailsGracefullyOnNullptrs: 30.865] [WARN] ADC Chip 1 fehlt im Context!	[PASSED]
+[02:25: HardwareBootstrapperTest.BootSucceedsWithValidHardwareInfo: 30.865] [INFO] ADC Chip 1 im Context gefunden.	[PASSED]
+[02:25: HardwareBootstrapperTest.BootRegistersHardwareErrors: 30.865] [INFO] ADC Chip 1 im Context gefunden.	[PASSED]
+LedManagerTest.IgnoresUpdatesIfHealthMaskIsZero	[PASSED]
+[02:25: LedManagerTest.SetsCorrectColorsForDigitalIo: 30.865] [INFO] [SYSTEM] Referenzspannung fuer Digital IN Kanal 1 auf 24000 mV gesetzt	[PASSED]
+[02:25: LedManagerTest.SetsRedColorOnFloatState: 30.865] [INFO] [SYSTEM] Referenzspannung fuer Digital IN Kanal 2 auf 24000 mV gesetzt	[PASSED]
+[02:25: LedManagerTest.UpdatesSystemLedBasedOnErrorCount: 30.865] [LED] Treiber 2 Ch 3 wurde auf Grün gesetzt.	[PASSED]
+[02:25: LedManagerTest.LogsErrorIfI2cCommunicationFails: 30.865] [WARN] [LED-Treiber 0Ch 5 [SetColor]] Allgemeines I2C Kommunikations Problem	[PASSED]
+[02:25: MailboxTest.AnalogTarget_ValidAndInvalidBounds: 30.865] [MAILBOX] Neuer Analog Wert für Kanal 1: 15.00 V empfangen.	[PASSED]
+[02:25: MailboxTest.DigitalTarget_IgnoresInvalidChannels: 30.865] [MAILBOX] Neuer Digital Wert für Kanal 1: ON empfangen.	[PASSED]
+[02:25: MailboxTest.AnalogTarget_LastWriteWins: 30.865] [MAILBOX] Neuer Analog Wert für Kanal 3: 5.00 V empfangen.	[PASSED]
+MailboxTest.SerialTx_AppendsMultiplePayloads	[PASSED]
+MailboxTest.SerialConfig_IgnoresInvalidBaudrates	[PASSED]
+MovingAverageFilterTest.CalculatesAverageCorrectly	[PASSED]
+MovingAverageFilterTest.RingBufferOverridesOldestValues	[PASSED]
+MovingAverageFilterTest.ResetClearsBufferAndPreventsDivByZero	[PASSED]
+[02:25: ProcessImagerTest.SyncUpdateToActive_TriggersChangeFlags: 30.865] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 2, Channel: 2, Neuer Wert: 5000 mV	[PASSED]
+ProcessImagerTest.SafeGetters_ReturnZeroOnInvalidChannels	[PASSED]
+[02:25: ProcessImagerTest.SetDigitalReference_IgnoresInvalidInputs: 30.865] [INFO] [SYSTEM] Referenzspannung fuer Digital IN Kanal 1 auf 5000 mV gesetzt	[PASSED]
+[02:25: ProcessImagerTest.GetDigitalState_CalculatesStatesCorrectly: 30.865] [INFO] [SYSTEM] Referenzspannung fuer Digital IN Kanal 1 auf 10000 mV gesetzt	[PASSED]
+ProcessImagerTest.AdjustedDacVoltage_StoresAndLimitsValues	[PASSED]
+ProcessImagerTest.Setters_IgnoreInvalidInputs	[PASSED]
+SerialStreamerTest.WriteTx_IgnoredIfHealthMaskIsZero	[PASSED]
+SerialStreamerTest.WriteTx_CalledIfPortIsHealthy	[PASSED]
+SerialStreamerTest.SetBaudrate_IgnoredForInvalidPorts	[PASSED]
+SerialStreamerTest.ProcessReadRx_TriggersCallbackOnTimeout	[PASSED]
+WebBouncerTest.AcquireSlot_LimitsAtMaxClients	[PASSED]
+WebBouncerTest.ReleaseSlot_FreesSpaceForNewRequests	[PASSED]
+WebBouncerTest.ReleaseSlot_DoesNotUnderflow	[PASSED]
+WebBouncerTest.AllowSseConnection_LimitsMaxStreams	[PASSED]
+DataConverterUtilsTest.EvaluatesSpsLogicCorrectly	[PASSED]
+DataConverterUtilsTest.EvaluatesExactThresholdBoundaries	[PASSED]
+DataConverterUtilsTest.DeterminesCorrectLedColor	[PASSED]
+---------------- native:test_desktop [PASSED] Took 8.21 seconds ----------------
+
+=================================== SUMMARY ===================================
+Environment    Test          Status    Duration
+-------------  ------------  --------  ------------
+native         test_desktop  PASSED    00:00:08.206
+================= 70 test cases: 70 succeeded in 00:00:08.206 =================
+
+
+================ VERBOSE DETAILS ================
+Collected 1 tests (test_desktop)
+
+Processing test_desktop in native environment
+--------------------------------------------------------------------------------
+Building...
+
+
+Testing...
+[==========] Running 70 tests from 11 test suites.
+[----------] Global test environment set-up.
+[----------] 8 tests from ApiControllerTest
+[ RUN      ] ApiControllerTest.RoutesAreSuccessfullyRegistered
+[02:25:32.070] ========== SIMULATION ==========
+[02:25:32.070] Platform: Native (WSL/Linux/Windows)
+[02:25:32.070] C++ Standard: 201703
+[02:25:32.070] ================================
+
+
+[02:25:32.070] [INFO] ADC Chip 1 im Context gefunden.
+[02:25:32.070] [INFO] ADC Chip 1 Initialisierung erfolgreich.
+[02:25:32.070] [INFO] ADC Chip 2 im Context gefunden.
+[02:25:32.070] [INFO] ADC Chip 2 Initialisierung erfolgreich.
+[02:25:32.070] [INFO] ADC Chip 3 im Context gefunden.
+[02:25:32.070] [INFO] ADC Chip 3 Initialisierung erfolgreich.
+[02:25:32.070] [INFO] ADC Chip 4 im Context gefunden.
+[02:25:32.070] [INFO] ADC Chip 4 Initialisierung erfolgreich.
+[02:25:32.070] [INFO] DAC Digital-Out 1 im Context gefunden.
+[02:25:32.070] [INFO] DAC 1 Initialisierung erfolgreich.
+[02:25:32.070] [INFO] LED Driver 1 initialisiert.
+[02:25:32.070] [INFO] LED Driver 2 initialisiert.
+[02:25:32.070] [INFO] LED Driver 3 initialisiert.
+[02:25:32.070] [INFO] Serial Interface UART im Context gefunden.
+[02:25:32.070] [INFO] Serial Interface UART erfolgreich initialisiert.
+[02:25:32.070] [INFO] Serial Interface RS485 im Context gefunden.
+[02:25:32.070] [INFO] Serial Interface RS485 erfolgreich initialisiert.
+[02:25:32.070] [INFO] Serial Interface RS232 im Context gefunden.
+[02:25:32.070] [INFO] Serial Interface RS232 erfolgreich initialisiert.
+[02:25:32.070] [SYSTEM] Initialisierung erfolgreich.
+
+
+[02:25:32.070] [INFO] [LED] Alle LEDs wurden abgeschaltet.
+[       OK ] ApiControllerTest.RoutesAreSuccessfullyRegistered (0 ms)
+[ RUN      ] ApiControllerTest.GetIoAllReturnsCorrectJsonSchema
+[02:25:32.071] ========== SIMULATION ==========
+[02:25:32.071] Platform: Native (WSL/Linux/Windows)
+[02:25:32.071] C++ Standard: 201703
+[02:25:32.071] ================================
+
+
+[02:25:32.071] [INFO] ADC Chip 1 im Context gefunden.
+[02:25:32.071] [INFO] ADC Chip 1 Initialisierung erfolgreich.
+[02:25:32.071] [INFO] ADC Chip 2 im Context gefunden.
+[02:25:32.071] [INFO] ADC Chip 2 Initialisierung erfolgreich.
+[02:25:32.071] [INFO] ADC Chip 3 im Context gefunden.
+[02:25:32.071] [INFO] ADC Chip 3 Initialisierung erfolgreich.
+[02:25:32.071] [INFO] ADC Chip 4 im Context gefunden.
+[02:25:32.071] [INFO] ADC Chip 4 Initialisierung erfolgreich.
+[02:25:32.071] [INFO] DAC Digital-Out 1 im Context gefunden.
+[02:25:32.071] [INFO] DAC 1 Initialisierung erfolgreich.
+[02:25:32.071] [INFO] LED Driver 1 initialisiert.
+[02:25:32.071] [INFO] LED Driver 2 initialisiert.
+[02:25:32.071] [INFO] LED Driver 3 initialisiert.
+[02:25:32.071] [INFO] Serial Interface UART im Context gefunden.
+[02:25:32.071] [INFO] Serial Interface UART erfolgreich initialisiert.
+[02:25:32.071] [INFO] Serial Interface RS485 im Context gefunden.
+[02:25:32.071] [INFO] Serial Interface RS485 erfolgreich initialisiert.
+[02:25:32.071] [INFO] Serial Interface RS232 im Context gefunden.
+[02:25:32.071] [INFO] Serial Interface RS232 erfolgreich initialisiert.
+[02:25:32.071] [SYSTEM] Initialisierung erfolgreich.
+
+
+[02:25:32.071] [INFO] [LED] Alle LEDs wurden abgeschaltet.
+[       OK ] ApiControllerTest.GetIoAllReturnsCorrectJsonSchema (0 ms)
+[ RUN      ] ApiControllerTest.PutAnalogOutputValidValueSucceeds
+[02:25:32.071] ========== SIMULATION ==========
+[02:25:32.071] Platform: Native (WSL/Linux/Windows)
+[02:25:32.071] C++ Standard: 201703
+[02:25:32.071] ================================
+
+
+[02:25:32.071] [INFO] ADC Chip 1 im Context gefunden.
+[02:25:32.071] [INFO] ADC Chip 1 Initialisierung erfolgreich.
+[02:25:32.071] [INFO] ADC Chip 2 im Context gefunden.
+[02:25:32.071] [INFO] ADC Chip 2 Initialisierung erfolgreich.
+[02:25:32.071] [INFO] ADC Chip 3 im Context gefunden.
+[02:25:32.071] [INFO] ADC Chip 3 Initialisierung erfolgreich.
+[02:25:32.071] [INFO] ADC Chip 4 im Context gefunden.
+[02:25:32.071] [INFO] ADC Chip 4 Initialisierung erfolgreich.
+[02:25:32.071] [INFO] DAC Digital-Out 1 im Context gefunden.
+[02:25:32.071] [INFO] DAC 1 Initialisierung erfolgreich.
+[02:25:32.071] [INFO] LED Driver 1 initialisiert.
+[02:25:32.071] [INFO] LED Driver 2 initialisiert.
+[02:25:32.071] [INFO] LED Driver 3 initialisiert.
+[02:25:32.071] [INFO] Serial Interface UART im Context gefunden.
+[02:25:32.071] [INFO] Serial Interface UART erfolgreich initialisiert.
+[02:25:32.071] [INFO] Serial Interface RS485 im Context gefunden.
+[02:25:32.071] [INFO] Serial Interface RS485 erfolgreich initialisiert.
+[02:25:32.071] [INFO] Serial Interface RS232 im Context gefunden.
+[02:25:32.071] [INFO] Serial Interface RS232 erfolgreich initialisiert.
+[02:25:32.071] [SYSTEM] Initialisierung erfolgreich.
+
+
+[02:25:32.071] [INFO] [LED] Alle LEDs wurden abgeschaltet.
+[02:25:32.071] [MAILBOX] Neuer Analog Wert für Kanal 1: 12.00 V empfangen.
+
+[02:25:32.071] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 12000 mV
+[02:25:32.071] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 12000 mV
+[02:25:32.071] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 12000 mV
+[02:25:32.071] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 12000 mV
+[02:25:32.071] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 12000 mV
+[02:25:32.071] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 12000 mV
+[02:25:32.071] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 12000 mV
+[02:25:32.071] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 12000 mV
+[02:25:32.071] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 2, Channel: 0, Neuer Wert: 12000 mV
+[02:25:32.071] [INFO] [DEBUG] Schreibe DAC Kanal 1 auf 2.40 V
+[02:25:32.071] [LED] Treiber 2 Ch 3 wurde auf Grün gesetzt.
+[       OK ] ApiControllerTest.PutAnalogOutputValidValueSucceeds (1 ms)
+[ RUN      ] ApiControllerTest.PutAnalogOutputExceedsMaximumFails
+[02:25:32.073] ========== SIMULATION ==========
+[02:25:32.073] Platform: Native (WSL/Linux/Windows)
+[02:25:32.073] C++ Standard: 201703
+[02:25:32.073] ================================
+
+
+[02:25:32.073] [INFO] ADC Chip 1 im Context gefunden.
+[02:25:32.073] [INFO] ADC Chip 1 Initialisierung erfolgreich.
+[02:25:32.073] [INFO] ADC Chip 2 im Context gefunden.
+[02:25:32.073] [INFO] ADC Chip 2 Initialisierung erfolgreich.
+[02:25:32.073] [INFO] ADC Chip 3 im Context gefunden.
+[02:25:32.073] [INFO] ADC Chip 3 Initialisierung erfolgreich.
+[02:25:32.073] [INFO] ADC Chip 4 im Context gefunden.
+[02:25:32.073] [INFO] ADC Chip 4 Initialisierung erfolgreich.
+[02:25:32.073] [INFO] DAC Digital-Out 1 im Context gefunden.
+[02:25:32.073] [INFO] DAC 1 Initialisierung erfolgreich.
+[02:25:32.073] [INFO] LED Driver 1 initialisiert.
+[02:25:32.073] [INFO] LED Driver 2 initialisiert.
+[02:25:32.073] [INFO] LED Driver 3 initialisiert.
+[02:25:32.073] [INFO] Serial Interface UART im Context gefunden.
+[02:25:32.073] [INFO] Serial Interface UART erfolgreich initialisiert.
+[02:25:32.073] [INFO] Serial Interface RS485 im Context gefunden.
+[02:25:32.073] [INFO] Serial Interface RS485 erfolgreich initialisiert.
+[02:25:32.073] [INFO] Serial Interface RS232 im Context gefunden.
+[02:25:32.073] [INFO] Serial Interface RS232 erfolgreich initialisiert.
+[02:25:32.073] [SYSTEM] Initialisierung erfolgreich.
+
+
+[02:25:32.073] [INFO] [LED] Alle LEDs wurden abgeschaltet.
+[02:25:32.073] [ERROR] API Error: Value ueberschreitet 25000 mV
+[       OK ] ApiControllerTest.PutAnalogOutputExceedsMaximumFails (0 ms)
+[ RUN      ] ApiControllerTest.PutWithInvalidJsonFailsGracefully
+[02:25:32.073] ========== SIMULATION ==========
+[02:25:32.073] Platform: Native (WSL/Linux/Windows)
+[02:25:32.073] C++ Standard: 201703
+[02:25:32.073] ================================
+
+
+[02:25:32.073] [INFO] ADC Chip 1 im Context gefunden.
+[02:25:32.073] [INFO] ADC Chip 1 Initialisierung erfolgreich.
+[02:25:32.073] [INFO] ADC Chip 2 im Context gefunden.
+[02:25:32.073] [INFO] ADC Chip 2 Initialisierung erfolgreich.
+[02:25:32.073] [INFO] ADC Chip 3 im Context gefunden.
+[02:25:32.073] [INFO] ADC Chip 3 Initialisierung erfolgreich.
+[02:25:32.073] [INFO] ADC Chip 4 im Context gefunden.
+[02:25:32.073] [INFO] ADC Chip 4 Initialisierung erfolgreich.
+[02:25:32.073] [INFO] DAC Digital-Out 1 im Context gefunden.
+[02:25:32.073] [INFO] DAC 1 Initialisierung erfolgreich.
+[02:25:32.073] [INFO] LED Driver 1 initialisiert.
+[02:25:32.073] [INFO] LED Driver 2 initialisiert.
+[02:25:32.073] [INFO] LED Driver 3 initialisiert.
+[02:25:32.073] [INFO] Serial Interface UART im Context gefunden.
+[02:25:32.073] [INFO] Serial Interface UART erfolgreich initialisiert.
+[02:25:32.073] [INFO] Serial Interface RS485 im Context gefunden.
+[02:25:32.073] [INFO] Serial Interface RS485 erfolgreich initialisiert.
+[02:25:32.073] [INFO] Serial Interface RS232 im Context gefunden.
+[02:25:32.073] [INFO] Serial Interface RS232 erfolgreich initialisiert.
+[02:25:32.073] [SYSTEM] Initialisierung erfolgreich.
+
+
+[02:25:32.073] [INFO] [LED] Alle LEDs wurden abgeschaltet.
+[02:25:32.073] [ERROR] API Error (Analog Put): Falsches JSON Format
+[       OK ] ApiControllerTest.PutWithInvalidJsonFailsGracefully (0 ms)
+[ RUN      ] ApiControllerTest.PutDigitalOutputValidValueSucceeds
+[02:25:32.074] ========== SIMULATION ==========
+[02:25:32.074] Platform: Native (WSL/Linux/Windows)
+[02:25:32.074] C++ Standard: 201703
+[02:25:32.074] ================================
+
+
+[02:25:32.074] [INFO] ADC Chip 1 im Context gefunden.
+[02:25:32.074] [INFO] ADC Chip 1 Initialisierung erfolgreich.
+[02:25:32.074] [INFO] ADC Chip 2 im Context gefunden.
+[02:25:32.074] [INFO] ADC Chip 2 Initialisierung erfolgreich.
+[02:25:32.074] [INFO] ADC Chip 3 im Context gefunden.
+[02:25:32.074] [INFO] ADC Chip 3 Initialisierung erfolgreich.
+[02:25:32.074] [INFO] ADC Chip 4 im Context gefunden.
+[02:25:32.074] [INFO] ADC Chip 4 Initialisierung erfolgreich.
+[02:25:32.074] [INFO] DAC Digital-Out 1 im Context gefunden.
+[02:25:32.074] [INFO] DAC 1 Initialisierung erfolgreich.
+[02:25:32.074] [INFO] LED Driver 1 initialisiert.
+[02:25:32.074] [INFO] LED Driver 2 initialisiert.
+[02:25:32.074] [INFO] LED Driver 3 initialisiert.
+[02:25:32.074] [INFO] Serial Interface UART im Context gefunden.
+[02:25:32.074] [INFO] Serial Interface UART erfolgreich initialisiert.
+[02:25:32.074] [INFO] Serial Interface RS485 im Context gefunden.
+[02:25:32.074] [INFO] Serial Interface RS485 erfolgreich initialisiert.
+[02:25:32.074] [INFO] Serial Interface RS232 im Context gefunden.
+[02:25:32.074] [INFO] Serial Interface RS232 erfolgreich initialisiert.
+[02:25:32.074] [SYSTEM] Initialisierung erfolgreich.
+
+
+[02:25:32.074] [INFO] [LED] Alle LEDs wurden abgeschaltet.
+[02:25:32.074] [MAILBOX] Neuer Digital Wert für Kanal 2: ON empfangen.
+
+[       OK ] ApiControllerTest.PutDigitalOutputValidValueSucceeds (0 ms)
+[ RUN      ] ApiControllerTest.PutDigitalReferenceChangesSystemConfig
+[02:25:32.074] ========== SIMULATION ==========
+[02:25:32.074] Platform: Native (WSL/Linux/Windows)
+[02:25:32.074] C++ Standard: 201703
+[02:25:32.074] ================================
+
+
+[02:25:32.074] [INFO] ADC Chip 1 im Context gefunden.
+[02:25:32.074] [INFO] ADC Chip 1 Initialisierung erfolgreich.
+[02:25:32.074] [INFO] ADC Chip 2 im Context gefunden.
+[02:25:32.074] [INFO] ADC Chip 2 Initialisierung erfolgreich.
+[02:25:32.074] [INFO] ADC Chip 3 im Context gefunden.
+[02:25:32.074] [INFO] ADC Chip 3 Initialisierung erfolgreich.
+[02:25:32.074] [INFO] ADC Chip 4 im Context gefunden.
+[02:25:32.074] [INFO] ADC Chip 4 Initialisierung erfolgreich.
+[02:25:32.074] [INFO] DAC Digital-Out 1 im Context gefunden.
+[02:25:32.074] [INFO] DAC 1 Initialisierung erfolgreich.
+[02:25:32.074] [INFO] LED Driver 1 initialisiert.
+[02:25:32.074] [INFO] LED Driver 2 initialisiert.
+[02:25:32.074] [INFO] LED Driver 3 initialisiert.
+[02:25:32.074] [INFO] Serial Interface UART im Context gefunden.
+[02:25:32.074] [INFO] Serial Interface UART erfolgreich initialisiert.
+[02:25:32.074] [INFO] Serial Interface RS485 im Context gefunden.
+[02:25:32.074] [INFO] Serial Interface RS485 erfolgreich initialisiert.
+[02:25:32.074] [INFO] Serial Interface RS232 im Context gefunden.
+[02:25:32.074] [INFO] Serial Interface RS232 erfolgreich initialisiert.
+[02:25:32.074] [SYSTEM] Initialisierung erfolgreich.
+
+
+[02:25:32.074] [INFO] [LED] Alle LEDs wurden abgeschaltet.
+[02:25:32.074] [INFO] Received Digital Reference API Request: Channel 2, Direction Input, Body: {"voltage_mv": 5000}
+[02:25:32.074] [MAILBOX] Neue Referenzspannung für IN Kanal 3: 5.00 V empfangen.
+
+[02:25:32.074] [INFO] [SYSTEM] Referenzspannung fuer Digital IN Kanal 3 auf 5000 mV gesetzt
+[02:25:32.074] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 4500 mV
+[02:25:32.074] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 4500 mV
+[02:25:32.074] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 4500 mV
+[02:25:32.074] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 4500 mV
+[02:25:32.074] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 4500 mV
+[02:25:32.074] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 4500 mV
+[02:25:32.074] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 4500 mV
+[02:25:32.074] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 4500 mV
+[02:25:32.074] [LED] Treiber 2 Ch 3 wurde auf Grün gesetzt.
+[       OK ] ApiControllerTest.PutDigitalReferenceChangesSystemConfig (0 ms)
+[ RUN      ] ApiControllerTest.PutSerialTxSendsDataToCorrectUart
+[02:25:32.074] ========== SIMULATION ==========
+[02:25:32.074] Platform: Native (WSL/Linux/Windows)
+[02:25:32.074] C++ Standard: 201703
+[02:25:32.074] ================================
+
+
+[02:25:32.074] [INFO] ADC Chip 1 im Context gefunden.
+[02:25:32.074] [INFO] ADC Chip 1 Initialisierung erfolgreich.
+[02:25:32.074] [INFO] ADC Chip 2 im Context gefunden.
+[02:25:32.074] [INFO] ADC Chip 2 Initialisierung erfolgreich.
+[02:25:32.074] [INFO] ADC Chip 3 im Context gefunden.
+[02:25:32.074] [INFO] ADC Chip 3 Initialisierung erfolgreich.
+[02:25:32.074] [INFO] ADC Chip 4 im Context gefunden.
+[02:25:32.074] [INFO] ADC Chip 4 Initialisierung erfolgreich.
+[02:25:32.074] [INFO] DAC Digital-Out 1 im Context gefunden.
+[02:25:32.074] [INFO] DAC 1 Initialisierung erfolgreich.
+[02:25:32.074] [INFO] LED Driver 1 initialisiert.
+[02:25:32.074] [INFO] LED Driver 2 initialisiert.
+[02:25:32.074] [INFO] LED Driver 3 initialisiert.
+[02:25:32.074] [INFO] Serial Interface UART im Context gefunden.
+[02:25:32.074] [INFO] Serial Interface UART erfolgreich initialisiert.
+[02:25:32.074] [INFO] Serial Interface RS485 im Context gefunden.
+[02:25:32.074] [INFO] Serial Interface RS485 erfolgreich initialisiert.
+[02:25:32.074] [INFO] Serial Interface RS232 im Context gefunden.
+[02:25:32.074] [INFO] Serial Interface RS232 erfolgreich initialisiert.
+[02:25:32.074] [SYSTEM] Initialisierung erfolgreich.
+
+
+[02:25:32.074] [INFO] [LED] Alle LEDs wurden abgeschaltet.
+[02:25:32.074] [LED] Treiber 2 Ch 3 wurde auf Grün gesetzt.
+[       OK ] ApiControllerTest.PutSerialTxSendsDataToCorrectUart (0 ms)
+[----------] 8 tests from ApiControllerTest (4 ms total)
+
+[----------] 25 tests from SystemControllerTest
+[ RUN      ] SystemControllerTest.InitializationSucceedsWithValidHardware
+[02:25:32.075] ========== SIMULATION ==========
+[02:25:32.075] Platform: Native (WSL/Linux/Windows)
+[02:25:32.075] C++ Standard: 201703
+[02:25:32.075] ================================
+
+
+[02:25:32.075] [INFO] ADC Chip 1 im Context gefunden.
+[02:25:32.075] [INFO] ADC Chip 1 Initialisierung erfolgreich.
+[02:25:32.075] [INFO] ADC Chip 2 im Context gefunden.
+[02:25:32.075] [INFO] ADC Chip 2 Initialisierung erfolgreich.
+[02:25:32.075] [INFO] ADC Chip 3 im Context gefunden.
+[02:25:32.075] [INFO] ADC Chip 3 Initialisierung erfolgreich.
+[02:25:32.075] [INFO] ADC Chip 4 im Context gefunden.
+[02:25:32.075] [INFO] ADC Chip 4 Initialisierung erfolgreich.
+[02:25:32.075] [INFO] DAC Digital-Out 1 im Context gefunden.
+[02:25:32.075] [INFO] DAC 1 Initialisierung erfolgreich.
+[02:25:32.075] [INFO] LED Driver 1 initialisiert.
+[02:25:32.075] [INFO] LED Driver 2 initialisiert.
+[02:25:32.075] [INFO] LED Driver 3 initialisiert.
+[02:25:32.075] [INFO] Serial Interface UART im Context gefunden.
+[02:25:32.075] [INFO] Serial Interface UART erfolgreich initialisiert.
+[02:25:32.075] [INFO] Serial Interface RS485 im Context gefunden.
+[02:25:32.075] [INFO] Serial Interface RS485 erfolgreich initialisiert.
+[02:25:32.075] [INFO] Serial Interface RS232 im Context gefunden.
+[02:25:32.075] [INFO] Serial Interface RS232 erfolgreich initialisiert.
+[02:25:32.075] [SYSTEM] Initialisierung erfolgreich.
+
+
+[02:25:32.075] [INFO] [LED] Alle LEDs wurden abgeschaltet.
+[       OK ] SystemControllerTest.InitializationSucceedsWithValidHardware (0 ms)
+[ RUN      ] SystemControllerTest.InitializationFailsWhenPointerIsNullAdc
+[02:25:32.075] ========== SIMULATION ==========
+[02:25:32.075] Platform: Native (WSL/Linux/Windows)
+[02:25:32.075] C++ Standard: 201703
+[02:25:32.075] ================================
+
+
+[02:25:32.075] [WARN] ADC Chip 1 fehlt im Context!
+[02:25:32.075] [WARN] [ADC 1 [Init]] Nullpointer Überprüfung fehlgeschlagen
+[02:25:32.075] [INFO] ADC Chip 2 im Context gefunden.
+[02:25:32.075] [INFO] ADC Chip 2 Initialisierung erfolgreich.
+[02:25:32.075] [INFO] ADC Chip 3 im Context gefunden.
+[02:25:32.075] [INFO] ADC Chip 3 Initialisierung erfolgreich.
+[02:25:32.075] [INFO] ADC Chip 4 im Context gefunden.
+[02:25:32.075] [INFO] ADC Chip 4 Initialisierung erfolgreich.
+[02:25:32.075] [INFO] DAC Digital-Out 1 im Context gefunden.
+[02:25:32.075] [INFO] DAC 1 Initialisierung erfolgreich.
+[02:25:32.075] [INFO] LED Driver 1 initialisiert.
+[02:25:32.075] [INFO] LED Driver 2 initialisiert.
+[02:25:32.075] [INFO] LED Driver 3 initialisiert.
+[02:25:32.075] [INFO] Serial Interface UART im Context gefunden.
+[02:25:32.075] [INFO] Serial Interface UART erfolgreich initialisiert.
+[02:25:32.075] [INFO] Serial Interface RS485 im Context gefunden.
+[02:25:32.075] [INFO] Serial Interface RS485 erfolgreich initialisiert.
+[02:25:32.075] [INFO] Serial Interface RS232 im Context gefunden.
+[02:25:32.075] [INFO] Serial Interface RS232 erfolgreich initialisiert.
+[02:25:32.075] [WARN] Nicht alle konfigurierten ADC-Kanäle initialisiert!
+[02:25:32.075] [SYSTEM] Initialisierung mit WARNUNGEN abgeschlossen (Eingeschränkter Modus).
+
+
+[02:25:32.075] [INFO] [LED] Alle LEDs wurden abgeschaltet.
+[       OK ] SystemControllerTest.InitializationFailsWhenPointerIsNullAdc (0 ms)
+[ RUN      ] SystemControllerTest.InitializationFailsWhenPointerIsNullDac
+[02:25:32.075] ========== SIMULATION ==========
+[02:25:32.075] Platform: Native (WSL/Linux/Windows)
+[02:25:32.075] C++ Standard: 201703
+[02:25:32.075] ================================
+
+
+[02:25:32.075] [INFO] ADC Chip 1 im Context gefunden.
+[02:25:32.075] [INFO] ADC Chip 1 Initialisierung erfolgreich.
+[02:25:32.075] [INFO] ADC Chip 2 im Context gefunden.
+[02:25:32.075] [INFO] ADC Chip 2 Initialisierung erfolgreich.
+[02:25:32.075] [INFO] ADC Chip 3 im Context gefunden.
+[02:25:32.075] [INFO] ADC Chip 3 Initialisierung erfolgreich.
+[02:25:32.075] [INFO] ADC Chip 4 im Context gefunden.
+[02:25:32.075] [INFO] ADC Chip 4 Initialisierung erfolgreich.
+[02:25:32.075] [ERROR] DAC 1 fehlt im Context!
+[02:25:32.075] [WARN] [DAC 1 [Init]] Nullpointer Überprüfung fehlgeschlagen
+[02:25:32.075] [INFO] LED Driver 1 initialisiert.
+[02:25:32.075] [INFO] LED Driver 2 initialisiert.
+[02:25:32.075] [INFO] LED Driver 3 initialisiert.
+[02:25:32.075] [INFO] Serial Interface UART im Context gefunden.
+[02:25:32.075] [INFO] Serial Interface UART erfolgreich initialisiert.
+[02:25:32.075] [INFO] Serial Interface RS485 im Context gefunden.
+[02:25:32.075] [INFO] Serial Interface RS485 erfolgreich initialisiert.
+[02:25:32.075] [INFO] Serial Interface RS232 im Context gefunden.
+[02:25:32.075] [INFO] Serial Interface RS232 erfolgreich initialisiert.
+[02:25:32.075] [WARN] Nicht alle konfigurierten DAC-Kanäle initialisiert!
+[02:25:32.075] [SYSTEM] Initialisierung mit WARNUNGEN abgeschlossen (Eingeschränkter Modus).
+
+
+[02:25:32.075] [INFO] [LED] Alle LEDs wurden abgeschaltet.
+[       OK ] SystemControllerTest.InitializationFailsWhenPointerIsNullDac (0 ms)
+[ RUN      ] SystemControllerTest.InitializationFailsWhenPointerIsNullLed
+[02:25:32.075] ========== SIMULATION ==========
+[02:25:32.075] Platform: Native (WSL/Linux/Windows)
+[02:25:32.075] C++ Standard: 201703
+[02:25:32.075] ================================
+
+
+[02:25:32.075] [INFO] ADC Chip 1 im Context gefunden.
+[02:25:32.075] [INFO] ADC Chip 1 Initialisierung erfolgreich.
+[02:25:32.075] [INFO] ADC Chip 2 im Context gefunden.
+[02:25:32.075] [INFO] ADC Chip 2 Initialisierung erfolgreich.
+[02:25:32.075] [INFO] ADC Chip 3 im Context gefunden.
+[02:25:32.075] [INFO] ADC Chip 3 Initialisierung erfolgreich.
+[02:25:32.075] [INFO] ADC Chip 4 im Context gefunden.
+[02:25:32.075] [INFO] ADC Chip 4 Initialisierung erfolgreich.
+[02:25:32.075] [INFO] DAC Digital-Out 1 im Context gefunden.
+[02:25:32.075] [INFO] DAC 1 Initialisierung erfolgreich.
+[02:25:32.075] [INFO] LED Driver 1 initialisiert.
+[02:25:32.075] [WARN] LED Driver 2 fehlt im Context!
+[02:25:32.075] [WARN] [LED-Treiber 2 [Init]] Nullpointer Überprüfung fehlgeschlagen
+[02:25:32.075] [INFO] LED Driver 3 initialisiert.
+[02:25:32.075] [INFO] Serial Interface UART im Context gefunden.
+[02:25:32.075] [INFO] Serial Interface UART erfolgreich initialisiert.
+[02:25:32.075] [INFO] Serial Interface RS485 im Context gefunden.
+[02:25:32.075] [INFO] Serial Interface RS485 erfolgreich initialisiert.
+[02:25:32.075] [INFO] Serial Interface RS232 im Context gefunden.
+[02:25:32.075] [INFO] Serial Interface RS232 erfolgreich initialisiert.
+[02:25:32.075] [WARN] Nicht alle konfigurierten LED-Treiber initialisiert!
+[02:25:32.075] [SYSTEM] Initialisierung mit WARNUNGEN abgeschlossen (Eingeschränkter Modus).
+
+
+[02:25:32.075] [INFO] [LED] Alle LEDs wurden abgeschaltet.
+[       OK ] SystemControllerTest.InitializationFailsWhenPointerIsNullLed (0 ms)
+[ RUN      ] SystemControllerTest.AnalogOutputTargetIsProcessedAndSentToDac
+[02:25:32.075] ========== SIMULATION ==========
+[02:25:32.075] Platform: Native (WSL/Linux/Windows)
+[02:25:32.075] C++ Standard: 201703
+[02:25:32.075] ================================
+
+
+[02:25:32.075] [INFO] ADC Chip 1 im Context gefunden.
+[02:25:32.075] [INFO] ADC Chip 1 Initialisierung erfolgreich.
+[02:25:32.075] [INFO] ADC Chip 2 im Context gefunden.
+[02:25:32.075] [INFO] ADC Chip 2 Initialisierung erfolgreich.
+[02:25:32.075] [INFO] ADC Chip 3 im Context gefunden.
+[02:25:32.075] [INFO] ADC Chip 3 Initialisierung erfolgreich.
+[02:25:32.075] [INFO] ADC Chip 4 im Context gefunden.
+[02:25:32.075] [INFO] ADC Chip 4 Initialisierung erfolgreich.
+[02:25:32.075] [INFO] DAC Digital-Out 1 im Context gefunden.
+[02:25:32.075] [INFO] DAC 1 Initialisierung erfolgreich.
+[02:25:32.075] [INFO] LED Driver 1 initialisiert.
+[02:25:32.075] [INFO] LED Driver 2 initialisiert.
+[02:25:32.075] [INFO] LED Driver 3 initialisiert.
+[02:25:32.075] [INFO] Serial Interface UART im Context gefunden.
+[02:25:32.075] [INFO] Serial Interface UART erfolgreich initialisiert.
+[02:25:32.075] [INFO] Serial Interface RS485 im Context gefunden.
+[02:25:32.075] [INFO] Serial Interface RS485 erfolgreich initialisiert.
+[02:25:32.075] [INFO] Serial Interface RS232 im Context gefunden.
+[02:25:32.075] [INFO] Serial Interface RS232 erfolgreich initialisiert.
+[02:25:32.075] [SYSTEM] Initialisierung erfolgreich.
+
+
+[02:25:32.075] [INFO] [LED] Alle LEDs wurden abgeschaltet.
+[02:25:32.075] [MAILBOX] Neuer Analog Wert für Kanal 3: 12.00 V empfangen.
+
+[02:25:32.075] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 12000 mV
+[02:25:32.075] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 12000 mV
+[02:25:32.075] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 12000 mV
+[02:25:32.075] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 12000 mV
+[02:25:32.075] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 12000 mV
+[02:25:32.075] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 12000 mV
+[02:25:32.075] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 12000 mV
+[02:25:32.075] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 12000 mV
+[02:25:32.075] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 2, Channel: 2, Neuer Wert: 12000 mV
+[02:25:32.075] [INFO] [DEBUG] Schreibe DAC Kanal 3 auf 2.40 V
+[02:25:32.075] [LED] Treiber 2 Ch 3 wurde auf Grün gesetzt.
+[       OK ] SystemControllerTest.AnalogOutputTargetIsProcessedAndSentToDac (0 ms)
+[ RUN      ] SystemControllerTest.HardwareErrorIsLoggedProperly
+[02:25:32.075] ========== SIMULATION ==========
+[02:25:32.075] Platform: Native (WSL/Linux/Windows)
+[02:25:32.075] C++ Standard: 201703
+[02:25:32.075] ================================
+
+
+[02:25:32.075] [INFO] ADC Chip 1 im Context gefunden.
+[02:25:32.075] [INFO] ADC Chip 1 Initialisierung erfolgreich.
+[02:25:32.075] [INFO] ADC Chip 2 im Context gefunden.
+[02:25:32.075] [INFO] ADC Chip 2 Initialisierung erfolgreich.
+[02:25:32.075] [INFO] ADC Chip 3 im Context gefunden.
+[02:25:32.075] [INFO] ADC Chip 3 Initialisierung erfolgreich.
+[02:25:32.075] [INFO] ADC Chip 4 im Context gefunden.
+[02:25:32.075] [INFO] ADC Chip 4 Initialisierung erfolgreich.
+[02:25:32.075] [INFO] DAC Digital-Out 1 im Context gefunden.
+[02:25:32.075] [INFO] DAC 1 Initialisierung erfolgreich.
+[02:25:32.075] [INFO] LED Driver 1 initialisiert.
+[02:25:32.075] [INFO] LED Driver 2 initialisiert.
+[02:25:32.075] [INFO] LED Driver 3 initialisiert.
+[02:25:32.075] [INFO] Serial Interface UART im Context gefunden.
+[02:25:32.075] [INFO] Serial Interface UART erfolgreich initialisiert.
+[02:25:32.075] [INFO] Serial Interface RS485 im Context gefunden.
+[02:25:32.075] [INFO] Serial Interface RS485 erfolgreich initialisiert.
+[02:25:32.075] [INFO] Serial Interface RS232 im Context gefunden.
+[02:25:32.075] [INFO] Serial Interface RS232 erfolgreich initialisiert.
+[02:25:32.075] [SYSTEM] Initialisierung erfolgreich.
+
+
+[02:25:32.075] [INFO] [LED] Alle LEDs wurden abgeschaltet.
+[02:25:32.075] [WARN] [ADC 1Ch 1 [GetValue]] Allgemeines I2C Kommunikations Problem
+[02:25:32.075] [WARN] [ADC 2Ch 1 [GetValue]] Allgemeines I2C Kommunikations Problem
+[02:25:32.075] [WARN] [ADC 3Ch 1 [GetValue]] Allgemeines I2C Kommunikations Problem
+[02:25:32.075] [WARN] [ADC 4Ch 1 [GetValue]] Allgemeines I2C Kommunikations Problem
+[02:25:32.075] [LED] Treiber 2 Ch 3 wurde auf Grün gesetzt.
+[       OK ] SystemControllerTest.HardwareErrorIsLoggedProperly (0 ms)
+[ RUN      ] SystemControllerTest.DigitalInputThresholdRule
+[02:25:32.076] ========== SIMULATION ==========
+[02:25:32.076] Platform: Native (WSL/Linux/Windows)
+[02:25:32.076] C++ Standard: 201703
+[02:25:32.076] ================================
+
+
+[02:25:32.076] [INFO] ADC Chip 1 im Context gefunden.
+[02:25:32.076] [INFO] ADC Chip 1 Initialisierung erfolgreich.
+[02:25:32.076] [INFO] ADC Chip 2 im Context gefunden.
+[02:25:32.076] [INFO] ADC Chip 2 Initialisierung erfolgreich.
+[02:25:32.076] [INFO] ADC Chip 3 im Context gefunden.
+[02:25:32.076] [INFO] ADC Chip 3 Initialisierung erfolgreich.
+[02:25:32.076] [INFO] ADC Chip 4 im Context gefunden.
+[02:25:32.076] [INFO] ADC Chip 4 Initialisierung erfolgreich.
+[02:25:32.076] [INFO] DAC Digital-Out 1 im Context gefunden.
+[02:25:32.076] [INFO] DAC 1 Initialisierung erfolgreich.
+[02:25:32.076] [INFO] LED Driver 1 initialisiert.
+[02:25:32.076] [INFO] LED Driver 2 initialisiert.
+[02:25:32.076] [INFO] LED Driver 3 initialisiert.
+[02:25:32.076] [INFO] Serial Interface UART im Context gefunden.
+[02:25:32.076] [INFO] Serial Interface UART erfolgreich initialisiert.
+[02:25:32.076] [INFO] Serial Interface RS485 im Context gefunden.
+[02:25:32.076] [INFO] Serial Interface RS485 erfolgreich initialisiert.
+[02:25:32.076] [INFO] Serial Interface RS232 im Context gefunden.
+[02:25:32.076] [INFO] Serial Interface RS232 erfolgreich initialisiert.
+[02:25:32.076] [SYSTEM] Initialisierung erfolgreich.
+
+
+[02:25:32.076] [INFO] [LED] Alle LEDs wurden abgeschaltet.
+[02:25:32.076] [INFO] [SYSTEM] Referenzspannung fuer Digital IN Kanal 1 auf 24000 mV gesetzt
+[02:25:32.076] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 4000 mV
+[02:25:32.076] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 4000 mV
+[02:25:32.076] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 4000 mV
+[02:25:32.076] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 4000 mV
+[02:25:32.076] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 4000 mV
+[02:25:32.076] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 4000 mV
+[02:25:32.076] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 4000 mV
+[02:25:32.076] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 4000 mV
+[02:25:32.076] [LED] Treiber 2 Ch 3 wurde auf Grün gesetzt.
+[       OK ] SystemControllerTest.DigitalInputThresholdRule (0 ms)
+[ RUN      ] SystemControllerTest.DigitalInputThresholdRuleHigh
+[02:25:32.076] ========== SIMULATION ==========
+[02:25:32.076] Platform: Native (WSL/Linux/Windows)
+[02:25:32.076] C++ Standard: 201703
+[02:25:32.076] ================================
+
+
+[02:25:32.076] [INFO] ADC Chip 1 im Context gefunden.
+[02:25:32.076] [INFO] ADC Chip 1 Initialisierung erfolgreich.
+[02:25:32.076] [INFO] ADC Chip 2 im Context gefunden.
+[02:25:32.076] [INFO] ADC Chip 2 Initialisierung erfolgreich.
+[02:25:32.076] [INFO] ADC Chip 3 im Context gefunden.
+[02:25:32.076] [INFO] ADC Chip 3 Initialisierung erfolgreich.
+[02:25:32.076] [INFO] ADC Chip 4 im Context gefunden.
+[02:25:32.076] [INFO] ADC Chip 4 Initialisierung erfolgreich.
+[02:25:32.076] [INFO] DAC Digital-Out 1 im Context gefunden.
+[02:25:32.076] [INFO] DAC 1 Initialisierung erfolgreich.
+[02:25:32.076] [INFO] LED Driver 1 initialisiert.
+[02:25:32.076] [INFO] LED Driver 2 initialisiert.
+[02:25:32.076] [INFO] LED Driver 3 initialisiert.
+[02:25:32.076] [INFO] Serial Interface UART im Context gefunden.
+[02:25:32.076] [INFO] Serial Interface UART erfolgreich initialisiert.
+[02:25:32.076] [INFO] Serial Interface RS485 im Context gefunden.
+[02:25:32.076] [INFO] Serial Interface RS485 erfolgreich initialisiert.
+[02:25:32.076] [INFO] Serial Interface RS232 im Context gefunden.
+[02:25:32.076] [INFO] Serial Interface RS232 erfolgreich initialisiert.
+[02:25:32.077] [SYSTEM] Initialisierung erfolgreich.
+
+
+[02:25:32.077] [INFO] [LED] Alle LEDs wurden abgeschaltet.
+[02:25:32.077] [INFO] [SYSTEM] Referenzspannung fuer Digital IN Kanal 2 auf 5000 mV gesetzt
+[02:25:32.077] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 4500 mV
+[02:25:32.077] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 4500 mV
+[02:25:32.077] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 4500 mV
+[02:25:32.077] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 4500 mV
+[02:25:32.077] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 4500 mV
+[02:25:32.077] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 4500 mV
+[02:25:32.077] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 4500 mV
+[02:25:32.077] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 4500 mV
+[02:25:32.077] [LED] Treiber 2 Ch 3 wurde auf Grün gesetzt.
+[       OK ] SystemControllerTest.DigitalInputThresholdRuleHigh (0 ms)
+[ RUN      ] SystemControllerTest.DigitalInputThresholdRuleFloat
+[02:25:32.077] ========== SIMULATION ==========
+[02:25:32.077] Platform: Native (WSL/Linux/Windows)
+[02:25:32.077] C++ Standard: 201703
+[02:25:32.077] ================================
+
+
+[02:25:32.077] [INFO] ADC Chip 1 im Context gefunden.
+[02:25:32.077] [INFO] ADC Chip 1 Initialisierung erfolgreich.
+[02:25:32.077] [INFO] ADC Chip 2 im Context gefunden.
+[02:25:32.077] [INFO] ADC Chip 2 Initialisierung erfolgreich.
+[02:25:32.077] [INFO] ADC Chip 3 im Context gefunden.
+[02:25:32.077] [INFO] ADC Chip 3 Initialisierung erfolgreich.
+[02:25:32.077] [INFO] ADC Chip 4 im Context gefunden.
+[02:25:32.077] [INFO] ADC Chip 4 Initialisierung erfolgreich.
+[02:25:32.077] [INFO] DAC Digital-Out 1 im Context gefunden.
+[02:25:32.077] [INFO] DAC 1 Initialisierung erfolgreich.
+[02:25:32.077] [INFO] LED Driver 1 initialisiert.
+[02:25:32.077] [INFO] LED Driver 2 initialisiert.
+[02:25:32.077] [INFO] LED Driver 3 initialisiert.
+[02:25:32.077] [INFO] Serial Interface UART im Context gefunden.
+[02:25:32.077] [INFO] Serial Interface UART erfolgreich initialisiert.
+[02:25:32.077] [INFO] Serial Interface RS485 im Context gefunden.
+[02:25:32.077] [INFO] Serial Interface RS485 erfolgreich initialisiert.
+[02:25:32.077] [INFO] Serial Interface RS232 im Context gefunden.
+[02:25:32.077] [INFO] Serial Interface RS232 erfolgreich initialisiert.
+[02:25:32.077] [SYSTEM] Initialisierung erfolgreich.
+
+
+[02:25:32.077] [INFO] [LED] Alle LEDs wurden abgeschaltet.
+[02:25:32.077] [INFO] [SYSTEM] Referenzspannung fuer Digital IN Kanal 3 auf 24000 mV gesetzt
+[02:25:32.077] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 12000 mV
+[02:25:32.077] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 12000 mV
+[02:25:32.077] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 12000 mV
+[02:25:32.077] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 12000 mV
+[02:25:32.077] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 12000 mV
+[02:25:32.077] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 12000 mV
+[02:25:32.077] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 12000 mV
+[02:25:32.077] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 12000 mV
+[02:25:32.077] [LED] Treiber 2 Ch 3 wurde auf Grün gesetzt.
+[       OK ] SystemControllerTest.DigitalInputThresholdRuleFloat (0 ms)
+[ RUN      ] SystemControllerTest.AnalogInputMovingAverageFiltersNoise
+[02:25:32.078] ========== SIMULATION ==========
+[02:25:32.078] Platform: Native (WSL/Linux/Windows)
+[02:25:32.078] C++ Standard: 201703
+[02:25:32.078] ================================
+
+
+[02:25:32.078] [INFO] ADC Chip 1 im Context gefunden.
+[02:25:32.078] [INFO] ADC Chip 1 Initialisierung erfolgreich.
+[02:25:32.078] [INFO] ADC Chip 2 im Context gefunden.
+[02:25:32.078] [INFO] ADC Chip 2 Initialisierung erfolgreich.
+[02:25:32.078] [INFO] ADC Chip 3 im Context gefunden.
+[02:25:32.078] [INFO] ADC Chip 3 Initialisierung erfolgreich.
+[02:25:32.078] [INFO] ADC Chip 4 im Context gefunden.
+[02:25:32.078] [INFO] ADC Chip 4 Initialisierung erfolgreich.
+[02:25:32.078] [INFO] DAC Digital-Out 1 im Context gefunden.
+[02:25:32.078] [INFO] DAC 1 Initialisierung erfolgreich.
+[02:25:32.078] [INFO] LED Driver 1 initialisiert.
+[02:25:32.078] [INFO] LED Driver 2 initialisiert.
+[02:25:32.078] [INFO] LED Driver 3 initialisiert.
+[02:25:32.078] [INFO] Serial Interface UART im Context gefunden.
+[02:25:32.078] [INFO] Serial Interface UART erfolgreich initialisiert.
+[02:25:32.078] [INFO] Serial Interface RS485 im Context gefunden.
+[02:25:32.078] [INFO] Serial Interface RS485 erfolgreich initialisiert.
+[02:25:32.078] [INFO] Serial Interface RS232 im Context gefunden.
+[02:25:32.078] [INFO] Serial Interface RS232 erfolgreich initialisiert.
+[02:25:32.078] [SYSTEM] Initialisierung erfolgreich.
+
+
+[02:25:32.078] [INFO] [LED] Alle LEDs wurden abgeschaltet.
+[02:25:32.078] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 5000 mV
+[02:25:32.078] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 5000 mV
+[02:25:32.078] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 5000 mV
+[02:25:32.078] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 5000 mV
+[02:25:32.078] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 5000 mV
+[02:25:32.078] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 5000 mV
+[02:25:32.078] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 5000 mV
+[02:25:32.078] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 5000 mV
+[02:25:32.078] [LED] Treiber 2 Ch 3 wurde auf Grün gesetzt.
+[02:25:32.079] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 6000 mV
+[02:25:32.079] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 6000 mV
+[02:25:32.079] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 6000 mV
+[02:25:32.079] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 6000 mV
+[02:25:32.079] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 6000 mV
+[02:25:32.079] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 6000 mV
+[02:25:32.079] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 6000 mV
+[02:25:32.079] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 6000 mV
+[02:25:32.080] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 5000 mV
+[02:25:32.080] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 5000 mV
+[02:25:32.080] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 5000 mV
+[02:25:32.080] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 5000 mV
+[02:25:32.080] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 5000 mV
+[02:25:32.080] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 5000 mV
+[02:25:32.080] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 5000 mV
+[02:25:32.080] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 5000 mV
+[       OK ] SystemControllerTest.AnalogInputMovingAverageFiltersNoise (1 ms)
+[ RUN      ] SystemControllerTest.ErrorAutoRecoveryWorks
+[02:25:32.080] ========== SIMULATION ==========
+[02:25:32.080] Platform: Native (WSL/Linux/Windows)
+[02:25:32.080] C++ Standard: 201703
+[02:25:32.080] ================================
+
+
+[02:25:32.080] [INFO] ADC Chip 1 im Context gefunden.
+[02:25:32.080] [INFO] ADC Chip 1 Initialisierung erfolgreich.
+[02:25:32.080] [INFO] ADC Chip 2 im Context gefunden.
+[02:25:32.080] [INFO] ADC Chip 2 Initialisierung erfolgreich.
+[02:25:32.080] [INFO] ADC Chip 3 im Context gefunden.
+[02:25:32.080] [INFO] ADC Chip 3 Initialisierung erfolgreich.
+[02:25:32.080] [INFO] ADC Chip 4 im Context gefunden.
+[02:25:32.080] [INFO] ADC Chip 4 Initialisierung erfolgreich.
+[02:25:32.080] [INFO] DAC Digital-Out 1 im Context gefunden.
+[02:25:32.080] [INFO] DAC 1 Initialisierung erfolgreich.
+[02:25:32.080] [INFO] LED Driver 1 initialisiert.
+[02:25:32.080] [INFO] LED Driver 2 initialisiert.
+[02:25:32.080] [INFO] LED Driver 3 initialisiert.
+[02:25:32.080] [INFO] Serial Interface UART im Context gefunden.
+[02:25:32.080] [INFO] Serial Interface UART erfolgreich initialisiert.
+[02:25:32.080] [INFO] Serial Interface RS485 im Context gefunden.
+[02:25:32.080] [INFO] Serial Interface RS485 erfolgreich initialisiert.
+[02:25:32.080] [INFO] Serial Interface RS232 im Context gefunden.
+[02:25:32.080] [INFO] Serial Interface RS232 erfolgreich initialisiert.
+[02:25:32.080] [SYSTEM] Initialisierung erfolgreich.
+
+
+[02:25:32.080] [INFO] [LED] Alle LEDs wurden abgeschaltet.
+[02:25:32.080] [WARN] [ADC 1Ch 1 [GetValue]] Allgemeines I2C Kommunikations Problem
+[02:25:32.080] [WARN] [ADC 2Ch 1 [GetValue]] Allgemeines I2C Kommunikations Problem
+[02:25:32.080] [WARN] [ADC 3Ch 1 [GetValue]] Allgemeines I2C Kommunikations Problem
+[02:25:32.080] [WARN] [ADC 4Ch 1 [GetValue]] Allgemeines I2C Kommunikations Problem
+[02:25:32.080] [LED] Treiber 2 Ch 3 wurde auf Grün gesetzt.
+[02:25:32.080] [LED] Treiber 2 Ch 3 wurde auf Rot gesetzt.
+[02:25:32.080] [Fehler behoben] [ADC 1Ch 1 [GetValue]] Allgemeines I2C Kommunikations Problem
+[02:25:32.080] [Fehler behoben] [ADC 2Ch 1 [GetValue]] Allgemeines I2C Kommunikations Problem
+[02:25:32.080] [Fehler behoben] [ADC 3Ch 1 [GetValue]] Allgemeines I2C Kommunikations Problem
+[02:25:32.080] [Fehler behoben] [ADC 4Ch 1 [GetValue]] Allgemeines I2C Kommunikations Problem
+[       OK ] SystemControllerTest.ErrorAutoRecoveryWorks (0 ms)
+[ RUN      ] SystemControllerTest.AnalogOutputReadbackIsProcessedCorrectly
+[02:25:32.080] ========== SIMULATION ==========
+[02:25:32.080] Platform: Native (WSL/Linux/Windows)
+[02:25:32.080] C++ Standard: 201703
+[02:25:32.080] ================================
+
+
+[02:25:32.080] [INFO] ADC Chip 1 im Context gefunden.
+[02:25:32.080] [INFO] ADC Chip 1 Initialisierung erfolgreich.
+[02:25:32.080] [INFO] ADC Chip 2 im Context gefunden.
+[02:25:32.080] [INFO] ADC Chip 2 Initialisierung erfolgreich.
+[02:25:32.080] [INFO] ADC Chip 3 im Context gefunden.
+[02:25:32.080] [INFO] ADC Chip 3 Initialisierung erfolgreich.
+[02:25:32.080] [INFO] ADC Chip 4 im Context gefunden.
+[02:25:32.080] [INFO] ADC Chip 4 Initialisierung erfolgreich.
+[02:25:32.080] [INFO] DAC Digital-Out 1 im Context gefunden.
+[02:25:32.080] [INFO] DAC 1 Initialisierung erfolgreich.
+[02:25:32.080] [INFO] LED Driver 1 initialisiert.
+[02:25:32.080] [INFO] LED Driver 2 initialisiert.
+[02:25:32.080] [INFO] LED Driver 3 initialisiert.
+[02:25:32.080] [INFO] Serial Interface UART im Context gefunden.
+[02:25:32.080] [INFO] Serial Interface UART erfolgreich initialisiert.
+[02:25:32.080] [INFO] Serial Interface RS485 im Context gefunden.
+[02:25:32.080] [INFO] Serial Interface RS485 erfolgreich initialisiert.
+[02:25:32.080] [INFO] Serial Interface RS232 im Context gefunden.
+[02:25:32.080] [INFO] Serial Interface RS232 erfolgreich initialisiert.
+[02:25:32.080] [SYSTEM] Initialisierung erfolgreich.
+
+
+[02:25:32.080] [INFO] [LED] Alle LEDs wurden abgeschaltet.
+[02:25:32.080] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 11500 mV
+[02:25:32.080] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 11500 mV
+[02:25:32.080] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 11500 mV
+[02:25:32.080] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 11500 mV
+[02:25:32.080] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 11500 mV
+[02:25:32.080] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 11500 mV
+[02:25:32.080] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 11500 mV
+[02:25:32.080] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 11500 mV
+[02:25:32.080] [LED] Treiber 2 Ch 3 wurde auf Grün gesetzt.
+[       OK ] SystemControllerTest.AnalogOutputReadbackIsProcessedCorrectly (0 ms)
+[ RUN      ] SystemControllerTest.SerialRxBuffersAndTriggersCallback
+[02:25:32.081] ========== SIMULATION ==========
+[02:25:32.081] Platform: Native (WSL/Linux/Windows)
+[02:25:32.081] C++ Standard: 201703
+[02:25:32.081] ================================
+
+
+[02:25:32.081] [INFO] ADC Chip 1 im Context gefunden.
+[02:25:32.081] [INFO] ADC Chip 1 Initialisierung erfolgreich.
+[02:25:32.081] [INFO] ADC Chip 2 im Context gefunden.
+[02:25:32.081] [INFO] ADC Chip 2 Initialisierung erfolgreich.
+[02:25:32.081] [INFO] ADC Chip 3 im Context gefunden.
+[02:25:32.081] [INFO] ADC Chip 3 Initialisierung erfolgreich.
+[02:25:32.081] [INFO] ADC Chip 4 im Context gefunden.
+[02:25:32.081] [INFO] ADC Chip 4 Initialisierung erfolgreich.
+[02:25:32.081] [INFO] DAC Digital-Out 1 im Context gefunden.
+[02:25:32.081] [INFO] DAC 1 Initialisierung erfolgreich.
+[02:25:32.081] [INFO] LED Driver 1 initialisiert.
+[02:25:32.081] [INFO] LED Driver 2 initialisiert.
+[02:25:32.081] [INFO] LED Driver 3 initialisiert.
+[02:25:32.081] [INFO] Serial Interface UART im Context gefunden.
+[02:25:32.081] [INFO] Serial Interface UART erfolgreich initialisiert.
+[02:25:32.081] [INFO] Serial Interface RS485 im Context gefunden.
+[02:25:32.081] [INFO] Serial Interface RS485 erfolgreich initialisiert.
+[02:25:32.081] [INFO] Serial Interface RS232 im Context gefunden.
+[02:25:32.081] [INFO] Serial Interface RS232 erfolgreich initialisiert.
+[02:25:32.081] [SYSTEM] Initialisierung erfolgreich.
+
+
+[02:25:32.081] [INFO] [LED] Alle LEDs wurden abgeschaltet.
+[02:25:32.081] [LED] Treiber 2 Ch 3 wurde auf Grün gesetzt.
+[       OK ] SystemControllerTest.SerialRxBuffersAndTriggersCallback (60 ms)
+[ RUN      ] SystemControllerTest.ReadAdcInputs_ValidDataIsMappedCorrectly
+[02:25:32.142] ========== SIMULATION ==========
+[02:25:32.142] Platform: Native (WSL/Linux/Windows)
+[02:25:32.142] C++ Standard: 201703
+[02:25:32.142] ================================
+
+
+[02:25:32.142] [INFO] ADC Chip 1 im Context gefunden.
+[02:25:32.142] [INFO] ADC Chip 1 Initialisierung erfolgreich.
+[02:25:32.142] [INFO] ADC Chip 2 im Context gefunden.
+[02:25:32.142] [INFO] ADC Chip 2 Initialisierung erfolgreich.
+[02:25:32.142] [INFO] ADC Chip 3 im Context gefunden.
+[02:25:32.142] [INFO] ADC Chip 3 Initialisierung erfolgreich.
+[02:25:32.142] [INFO] ADC Chip 4 im Context gefunden.
+[02:25:32.142] [INFO] ADC Chip 4 Initialisierung erfolgreich.
+[02:25:32.142] [INFO] DAC Digital-Out 1 im Context gefunden.
+[02:25:32.142] [INFO] DAC 1 Initialisierung erfolgreich.
+[02:25:32.142] [INFO] LED Driver 1 initialisiert.
+[02:25:32.142] [INFO] LED Driver 2 initialisiert.
+[02:25:32.142] [INFO] LED Driver 3 initialisiert.
+[02:25:32.142] [INFO] Serial Interface UART im Context gefunden.
+[02:25:32.142] [INFO] Serial Interface UART erfolgreich initialisiert.
+[02:25:32.142] [INFO] Serial Interface RS485 im Context gefunden.
+[02:25:32.142] [INFO] Serial Interface RS485 erfolgreich initialisiert.
+[02:25:32.142] [INFO] Serial Interface RS232 im Context gefunden.
+[02:25:32.142] [INFO] Serial Interface RS232 erfolgreich initialisiert.
+[02:25:32.142] [SYSTEM] Initialisierung erfolgreich.
+
+
+[02:25:32.142] [INFO] [LED] Alle LEDs wurden abgeschaltet.
+[02:25:32.142] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 5000 mV
+[02:25:32.142] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 5000 mV
+[02:25:32.142] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 5000 mV
+[02:25:32.142] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 5000 mV
+[02:25:32.142] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 5000 mV
+[02:25:32.142] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 5000 mV
+[02:25:32.142] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 5000 mV
+[02:25:32.142] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 5000 mV
+[02:25:32.142] [LED] Treiber 2 Ch 3 wurde auf Grün gesetzt.
+[       OK ] SystemControllerTest.ReadAdcInputs_ValidDataIsMappedCorrectly (0 ms)
+[ RUN      ] SystemControllerTest.ReadAdcInputs_I2cErrorResetsFilterAndValue
+[02:25:32.143] ========== SIMULATION ==========
+[02:25:32.143] Platform: Native (WSL/Linux/Windows)
+[02:25:32.143] C++ Standard: 201703
+[02:25:32.143] ================================
+
+
+[02:25:32.143] [INFO] ADC Chip 1 im Context gefunden.
+[02:25:32.143] [INFO] ADC Chip 1 Initialisierung erfolgreich.
+[02:25:32.143] [INFO] ADC Chip 2 im Context gefunden.
+[02:25:32.143] [INFO] ADC Chip 2 Initialisierung erfolgreich.
+[02:25:32.143] [INFO] ADC Chip 3 im Context gefunden.
+[02:25:32.143] [INFO] ADC Chip 3 Initialisierung erfolgreich.
+[02:25:32.143] [INFO] ADC Chip 4 im Context gefunden.
+[02:25:32.143] [INFO] ADC Chip 4 Initialisierung erfolgreich.
+[02:25:32.143] [INFO] DAC Digital-Out 1 im Context gefunden.
+[02:25:32.143] [INFO] DAC 1 Initialisierung erfolgreich.
+[02:25:32.143] [INFO] LED Driver 1 initialisiert.
+[02:25:32.143] [INFO] LED Driver 2 initialisiert.
+[02:25:32.143] [INFO] LED Driver 3 initialisiert.
+[02:25:32.143] [INFO] Serial Interface UART im Context gefunden.
+[02:25:32.143] [INFO] Serial Interface UART erfolgreich initialisiert.
+[02:25:32.143] [INFO] Serial Interface RS485 im Context gefunden.
+[02:25:32.143] [INFO] Serial Interface RS485 erfolgreich initialisiert.
+[02:25:32.143] [INFO] Serial Interface RS232 im Context gefunden.
+[02:25:32.143] [INFO] Serial Interface RS232 erfolgreich initialisiert.
+[02:25:32.143] [SYSTEM] Initialisierung erfolgreich.
+
+
+[02:25:32.143] [INFO] [LED] Alle LEDs wurden abgeschaltet.
+[02:25:32.143] [WARN] [ADC 1Ch 1 [GetValue]] Allgemeines I2C Kommunikations Problem
+[02:25:32.143] [WARN] [ADC 2Ch 1 [GetValue]] Allgemeines I2C Kommunikations Problem
+[02:25:32.143] [WARN] [ADC 3Ch 1 [GetValue]] Allgemeines I2C Kommunikations Problem
+[02:25:32.143] [WARN] [ADC 4Ch 1 [GetValue]] Allgemeines I2C Kommunikations Problem
+[02:25:32.143] [LED] Treiber 2 Ch 3 wurde auf Grün gesetzt.
+[       OK ] SystemControllerTest.ReadAdcInputs_I2cErrorResetsFilterAndValue (0 ms)
+[ RUN      ] SystemControllerTest.ProcessSequence_CheckAndRegulateAnalogOut_RegulatesVoltage
+[02:25:32.143] ========== SIMULATION ==========
+[02:25:32.143] Platform: Native (WSL/Linux/Windows)
+[02:25:32.143] C++ Standard: 201703
+[02:25:32.143] ================================
+
+
+[02:25:32.143] [INFO] ADC Chip 1 im Context gefunden.
+[02:25:32.143] [INFO] ADC Chip 1 Initialisierung erfolgreich.
+[02:25:32.143] [INFO] ADC Chip 2 im Context gefunden.
+[02:25:32.143] [INFO] ADC Chip 2 Initialisierung erfolgreich.
+[02:25:32.143] [INFO] ADC Chip 3 im Context gefunden.
+[02:25:32.143] [INFO] ADC Chip 3 Initialisierung erfolgreich.
+[02:25:32.143] [INFO] ADC Chip 4 im Context gefunden.
+[02:25:32.143] [INFO] ADC Chip 4 Initialisierung erfolgreich.
+[02:25:32.143] [INFO] DAC Digital-Out 1 im Context gefunden.
+[02:25:32.143] [INFO] DAC 1 Initialisierung erfolgreich.
+[02:25:32.143] [INFO] LED Driver 1 initialisiert.
+[02:25:32.143] [INFO] LED Driver 2 initialisiert.
+[02:25:32.143] [INFO] LED Driver 3 initialisiert.
+[02:25:32.143] [INFO] Serial Interface UART im Context gefunden.
+[02:25:32.143] [INFO] Serial Interface UART erfolgreich initialisiert.
+[02:25:32.143] [INFO] Serial Interface RS485 im Context gefunden.
+[02:25:32.143] [INFO] Serial Interface RS485 erfolgreich initialisiert.
+[02:25:32.143] [INFO] Serial Interface RS232 im Context gefunden.
+[02:25:32.143] [INFO] Serial Interface RS232 erfolgreich initialisiert.
+[02:25:32.143] [SYSTEM] Initialisierung erfolgreich.
+
+
+[02:25:32.143] [INFO] [LED] Alle LEDs wurden abgeschaltet.
+[02:25:32.143] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 9500 mV
+[02:25:32.143] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 9500 mV
+[02:25:32.143] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 9500 mV
+[02:25:32.143] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 9500 mV
+[02:25:32.143] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 9500 mV
+[02:25:32.143] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 9500 mV
+[02:25:32.143] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 9500 mV
+[02:25:32.143] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 9500 mV
+[02:25:32.143] [LED] Treiber 2 Ch 3 wurde auf Grün gesetzt.
+[02:25:32.144] [MAILBOX] Neuer Analog Wert für Kanal 1: 10.00 V empfangen.
+
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 9475 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 9475 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 9475 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 9475 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 9475 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 9475 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 9475 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 9475 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 2, Channel: 0, Neuer Wert: 10000 mV
+[02:25:32.144] [INFO] [DEBUG] Schreibe DAC Kanal 1 auf 2.00 V
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 9450 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 9450 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 9450 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 9450 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 9450 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 9450 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 9450 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 9450 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 9425 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 9425 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 9425 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 9425 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 9425 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 9425 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 9425 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 9425 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 9400 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 9400 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 9400 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 9400 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 9400 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 9400 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 9400 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 9400 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 9375 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 9375 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 9375 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 9375 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 9375 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 9375 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 9375 mV
+[02:25:32.144] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 9375 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 9350 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 9350 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 9350 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 9350 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 9350 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 9350 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 9350 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 9350 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 9325 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 9325 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 9325 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 9325 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 9325 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 9325 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 9325 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 9325 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 9300 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 9300 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 9300 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 9300 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 9300 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 9300 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 9300 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 9300 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 9275 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 9275 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 9275 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 9275 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 9275 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 9275 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 9275 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 9275 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 9250 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 9250 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 9250 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 9250 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 9250 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 9250 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 9250 mV
+[02:25:32.145] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 9250 mV
+[02:25:32.146] [INFO] [DEBUG] Schreibe DAC Kanal 1 auf 2.08 V
+[       OK ] SystemControllerTest.ProcessSequence_CheckAndRegulateAnalogOut_RegulatesVoltage (3 ms)
+[ RUN      ] SystemControllerTest.ProcessSequence_CheckAndRegulateAnalogOut_ShortCircuitProtection
+[02:25:32.146] ========== SIMULATION ==========
+[02:25:32.146] Platform: Native (WSL/Linux/Windows)
+[02:25:32.146] C++ Standard: 201703
+[02:25:32.146] ================================
+
+
+[02:25:32.146] [INFO] ADC Chip 1 im Context gefunden.
+[02:25:32.146] [INFO] ADC Chip 1 Initialisierung erfolgreich.
+[02:25:32.146] [INFO] ADC Chip 2 im Context gefunden.
+[02:25:32.146] [INFO] ADC Chip 2 Initialisierung erfolgreich.
+[02:25:32.146] [INFO] ADC Chip 3 im Context gefunden.
+[02:25:32.146] [INFO] ADC Chip 3 Initialisierung erfolgreich.
+[02:25:32.146] [INFO] ADC Chip 4 im Context gefunden.
+[02:25:32.146] [INFO] ADC Chip 4 Initialisierung erfolgreich.
+[02:25:32.146] [INFO] DAC Digital-Out 1 im Context gefunden.
+[02:25:32.146] [INFO] DAC 1 Initialisierung erfolgreich.
+[02:25:32.146] [INFO] LED Driver 1 initialisiert.
+[02:25:32.146] [INFO] LED Driver 2 initialisiert.
+[02:25:32.146] [INFO] LED Driver 3 initialisiert.
+[02:25:32.146] [INFO] Serial Interface UART im Context gefunden.
+[02:25:32.146] [INFO] Serial Interface UART erfolgreich initialisiert.
+[02:25:32.146] [INFO] Serial Interface RS485 im Context gefunden.
+[02:25:32.146] [INFO] Serial Interface RS485 erfolgreich initialisiert.
+[02:25:32.146] [INFO] Serial Interface RS232 im Context gefunden.
+[02:25:32.146] [INFO] Serial Interface RS232 erfolgreich initialisiert.
+[02:25:32.146] [SYSTEM] Initialisierung erfolgreich.
+
+
+[02:25:32.146] [INFO] [LED] Alle LEDs wurden abgeschaltet.
+[02:25:32.147] [LED] Treiber 2 Ch 3 wurde auf Grün gesetzt.
+[02:25:32.147] [MAILBOX] Neuer Analog Wert für Kanal 2: 12.00 V empfangen.
+
+[02:25:32.147] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 2, Channel: 1, Neuer Wert: 12000 mV
+[02:25:32.147] [INFO] [DEBUG] Schreibe DAC Kanal 2 auf 2.40 V
+[02:25:32.149] [WARN] [AnalogOut 2 [Overload]] Wert außerhalb des Bereichs
+[02:25:32.149] [INFO] [DEBUG] Schreibe DAC Kanal 2 auf 0.00 V
+[       OK ] SystemControllerTest.ProcessSequence_CheckAndRegulateAnalogOut_ShortCircuitProtection (2 ms)
+[ RUN      ] SystemControllerTest.ProcessSequence_CheckDigitalOutSafety_DetectsVoltageDrop
+[02:25:32.149] ========== SIMULATION ==========
+[02:25:32.149] Platform: Native (WSL/Linux/Windows)
+[02:25:32.149] C++ Standard: 201703
+[02:25:32.149] ================================
+
+
+[02:25:32.149] [INFO] ADC Chip 1 im Context gefunden.
+[02:25:32.149] [INFO] ADC Chip 1 Initialisierung erfolgreich.
+[02:25:32.149] [INFO] ADC Chip 2 im Context gefunden.
+[02:25:32.149] [INFO] ADC Chip 2 Initialisierung erfolgreich.
+[02:25:32.149] [INFO] ADC Chip 3 im Context gefunden.
+[02:25:32.149] [INFO] ADC Chip 3 Initialisierung erfolgreich.
+[02:25:32.149] [INFO] ADC Chip 4 im Context gefunden.
+[02:25:32.149] [INFO] ADC Chip 4 Initialisierung erfolgreich.
+[02:25:32.149] [INFO] DAC Digital-Out 1 im Context gefunden.
+[02:25:32.149] [INFO] DAC 1 Initialisierung erfolgreich.
+[02:25:32.149] [INFO] LED Driver 1 initialisiert.
+[02:25:32.149] [INFO] LED Driver 2 initialisiert.
+[02:25:32.149] [INFO] LED Driver 3 initialisiert.
+[02:25:32.149] [INFO] Serial Interface UART im Context gefunden.
+[02:25:32.149] [INFO] Serial Interface UART erfolgreich initialisiert.
+[02:25:32.149] [INFO] Serial Interface RS485 im Context gefunden.
+[02:25:32.149] [INFO] Serial Interface RS485 erfolgreich initialisiert.
+[02:25:32.149] [INFO] Serial Interface RS232 im Context gefunden.
+[02:25:32.149] [INFO] Serial Interface RS232 erfolgreich initialisiert.
+[02:25:32.149] [SYSTEM] Initialisierung erfolgreich.
+
+
+[02:25:32.149] [INFO] [LED] Alle LEDs wurden abgeschaltet.
+[02:25:32.149] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 5000 mV
+[02:25:32.149] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 5000 mV
+[02:25:32.149] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 5000 mV
+[02:25:32.149] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 5000 mV
+[02:25:32.149] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 5000 mV
+[02:25:32.149] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 5000 mV
+[02:25:32.149] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 5000 mV
+[02:25:32.149] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 5000 mV
+[02:25:32.149] [LED] Treiber 2 Ch 3 wurde auf Grün gesetzt.
+[02:25:32.149] [MAILBOX] Neue Referenzspannung für OUT Kanal 1: 24.00 V empfangen.
+
+[02:25:32.149] [MAILBOX] Neuer Digital Wert für Kanal 1: ON empfangen.
+
+[02:25:32.150] [INFO] [SYSTEM] Referenzspannung fuer Digital OUT Kanal 1 auf 24000 mV gesetzt
+[02:25:32.150] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 3, Channel: 0, Neuer Wert: 1 mV
+[02:25:32.150] [INFO] [DEBUG] Digital Out Kanal 1 auf HIGH gesetzt
+[02:25:32.151] [WARN] [DigitalOut 1 [Safety]] Wert außerhalb des Bereichs
+[02:25:32.151] [INFO] [DEBUG] Digital Out Kanal 1 auf LOW gesetzt
+[       OK ] SystemControllerTest.ProcessSequence_CheckDigitalOutSafety_DetectsVoltageDrop (2 ms)
+[ RUN      ] SystemControllerTest.OutputSequence_UpdateDacOutputs_FailSafeOnHardwareError
+[02:25:32.151] ========== SIMULATION ==========
+[02:25:32.151] Platform: Native (WSL/Linux/Windows)
+[02:25:32.151] C++ Standard: 201703
+[02:25:32.151] ================================
+
+
+[02:25:32.151] [INFO] ADC Chip 1 im Context gefunden.
+[02:25:32.151] [INFO] ADC Chip 1 Initialisierung erfolgreich.
+[02:25:32.151] [INFO] ADC Chip 2 im Context gefunden.
+[02:25:32.151] [INFO] ADC Chip 2 Initialisierung erfolgreich.
+[02:25:32.151] [INFO] ADC Chip 3 im Context gefunden.
+[02:25:32.151] [INFO] ADC Chip 3 Initialisierung erfolgreich.
+[02:25:32.151] [INFO] ADC Chip 4 im Context gefunden.
+[02:25:32.151] [INFO] ADC Chip 4 Initialisierung erfolgreich.
+[02:25:32.151] [INFO] DAC Digital-Out 1 im Context gefunden.
+[02:25:32.151] [INFO] DAC 1 Initialisierung erfolgreich.
+[02:25:32.151] [INFO] LED Driver 1 initialisiert.
+[02:25:32.151] [INFO] LED Driver 2 initialisiert.
+[02:25:32.151] [INFO] LED Driver 3 initialisiert.
+[02:25:32.151] [INFO] Serial Interface UART im Context gefunden.
+[02:25:32.151] [INFO] Serial Interface UART erfolgreich initialisiert.
+[02:25:32.151] [INFO] Serial Interface RS485 im Context gefunden.
+[02:25:32.151] [INFO] Serial Interface RS485 erfolgreich initialisiert.
+[02:25:32.151] [INFO] Serial Interface RS232 im Context gefunden.
+[02:25:32.151] [INFO] Serial Interface RS232 erfolgreich initialisiert.
+[02:25:32.151] [SYSTEM] Initialisierung erfolgreich.
+
+
+[02:25:32.151] [INFO] [LED] Alle LEDs wurden abgeschaltet.
+[02:25:32.151] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 12000 mV
+[02:25:32.151] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 12000 mV
+[02:25:32.151] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 12000 mV
+[02:25:32.151] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 12000 mV
+[02:25:32.151] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 12000 mV
+[02:25:32.151] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 12000 mV
+[02:25:32.151] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 12000 mV
+[02:25:32.151] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 12000 mV
+[02:25:32.151] [LED] Treiber 2 Ch 3 wurde auf Grün gesetzt.
+[02:25:32.152] [MAILBOX] Neuer Analog Wert für Kanal 1: 12.00 V empfangen.
+
+[02:25:32.152] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 2, Channel: 0, Neuer Wert: 12000 mV
+[02:25:32.152] [WARN] [DAC Ch 1 [SetValue]] Allgemeines I2C Kommunikations Problem
+[02:25:32.152] [WARN] [FAIL-SAFE] DAC defekt. GPIO Kanal 1 hart abgeschaltet!
+[       OK ] SystemControllerTest.OutputSequence_UpdateDacOutputs_FailSafeOnHardwareError (0 ms)
+[ RUN      ] SystemControllerTest.OutputSequence_UpdateHardwareLeds_FloatStateIsRed
+[02:25:32.152] ========== SIMULATION ==========
+[02:25:32.152] Platform: Native (WSL/Linux/Windows)
+[02:25:32.152] C++ Standard: 201703
+[02:25:32.152] ================================
+
+
+[02:25:32.152] [INFO] ADC Chip 1 im Context gefunden.
+[02:25:32.152] [INFO] ADC Chip 1 Initialisierung erfolgreich.
+[02:25:32.152] [INFO] ADC Chip 2 im Context gefunden.
+[02:25:32.152] [INFO] ADC Chip 2 Initialisierung erfolgreich.
+[02:25:32.152] [INFO] ADC Chip 3 im Context gefunden.
+[02:25:32.152] [INFO] ADC Chip 3 Initialisierung erfolgreich.
+[02:25:32.152] [INFO] ADC Chip 4 im Context gefunden.
+[02:25:32.152] [INFO] ADC Chip 4 Initialisierung erfolgreich.
+[02:25:32.152] [INFO] DAC Digital-Out 1 im Context gefunden.
+[02:25:32.152] [INFO] DAC 1 Initialisierung erfolgreich.
+[02:25:32.152] [INFO] LED Driver 1 initialisiert.
+[02:25:32.152] [INFO] LED Driver 2 initialisiert.
+[02:25:32.152] [INFO] LED Driver 3 initialisiert.
+[02:25:32.152] [INFO] Serial Interface UART im Context gefunden.
+[02:25:32.152] [INFO] Serial Interface UART erfolgreich initialisiert.
+[02:25:32.152] [INFO] Serial Interface RS485 im Context gefunden.
+[02:25:32.152] [INFO] Serial Interface RS485 erfolgreich initialisiert.
+[02:25:32.152] [INFO] Serial Interface RS232 im Context gefunden.
+[02:25:32.152] [INFO] Serial Interface RS232 erfolgreich initialisiert.
+[02:25:32.152] [SYSTEM] Initialisierung erfolgreich.
+
+
+[02:25:32.152] [INFO] [LED] Alle LEDs wurden abgeschaltet.
+[02:25:32.152] [INFO] [SYSTEM] Referenzspannung fuer Digital IN Kanal 2 auf 24000 mV gesetzt
+[02:25:32.152] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 12000 mV
+[02:25:32.152] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 12000 mV
+[02:25:32.152] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 12000 mV
+[02:25:32.152] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 12000 mV
+[02:25:32.152] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 12000 mV
+[02:25:32.152] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 12000 mV
+[02:25:32.152] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 12000 mV
+[02:25:32.152] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 12000 mV
+[02:25:32.152] [LED] Treiber 2 Ch 3 wurde auf Grün gesetzt.
+[       OK ] SystemControllerTest.OutputSequence_UpdateHardwareLeds_FloatStateIsRed (0 ms)
+[ RUN      ] SystemControllerTest.OutputSequence_UpdateSystemLed_ReactsToErrors
+[02:25:32.153] ========== SIMULATION ==========
+[02:25:32.153] Platform: Native (WSL/Linux/Windows)
+[02:25:32.153] C++ Standard: 201703
+[02:25:32.153] ================================
+
+
+[02:25:32.153] [INFO] ADC Chip 1 im Context gefunden.
+[02:25:32.153] [INFO] ADC Chip 1 Initialisierung erfolgreich.
+[02:25:32.153] [INFO] ADC Chip 2 im Context gefunden.
+[02:25:32.153] [INFO] ADC Chip 2 Initialisierung erfolgreich.
+[02:25:32.153] [INFO] ADC Chip 3 im Context gefunden.
+[02:25:32.153] [INFO] ADC Chip 3 Initialisierung erfolgreich.
+[02:25:32.153] [INFO] ADC Chip 4 im Context gefunden.
+[02:25:32.153] [INFO] ADC Chip 4 Initialisierung erfolgreich.
+[02:25:32.153] [INFO] DAC Digital-Out 1 im Context gefunden.
+[02:25:32.153] [INFO] DAC 1 Initialisierung erfolgreich.
+[02:25:32.153] [INFO] LED Driver 1 initialisiert.
+[02:25:32.153] [INFO] LED Driver 2 initialisiert.
+[02:25:32.153] [INFO] LED Driver 3 initialisiert.
+[02:25:32.153] [INFO] Serial Interface UART im Context gefunden.
+[02:25:32.153] [INFO] Serial Interface UART erfolgreich initialisiert.
+[02:25:32.153] [INFO] Serial Interface RS485 im Context gefunden.
+[02:25:32.153] [INFO] Serial Interface RS485 erfolgreich initialisiert.
+[02:25:32.153] [INFO] Serial Interface RS232 im Context gefunden.
+[02:25:32.153] [INFO] Serial Interface RS232 erfolgreich initialisiert.
+[02:25:32.153] [SYSTEM] Initialisierung erfolgreich.
+
+
+[02:25:32.153] [INFO] [LED] Alle LEDs wurden abgeschaltet.
+[02:25:32.153] [LED] Treiber 2 Ch 3 wurde auf Grün gesetzt.
+[02:25:32.153] [WARN] [ADC 1Ch 1 [GetValue]] Allgemeines I2C Kommunikations Problem
+[02:25:32.153] [WARN] [ADC 2Ch 1 [GetValue]] Allgemeines I2C Kommunikations Problem
+[02:25:32.153] [WARN] [ADC 3Ch 1 [GetValue]] Allgemeines I2C Kommunikations Problem
+[02:25:32.153] [WARN] [ADC 4Ch 1 [GetValue]] Allgemeines I2C Kommunikations Problem
+[02:25:32.153] [LED] Treiber 2 Ch 3 wurde auf Rot gesetzt.
+[       OK ] SystemControllerTest.OutputSequence_UpdateSystemLed_ReactsToErrors (0 ms)
+[ RUN      ] SystemControllerTest.ProcessSequence_CheckAndRegulateAnalogOut_CapsAtMaximumVoltage
+[02:25:32.153] ========== SIMULATION ==========
+[02:25:32.153] Platform: Native (WSL/Linux/Windows)
+[02:25:32.153] C++ Standard: 201703
+[02:25:32.153] ================================
+
+
+[02:25:32.153] [INFO] ADC Chip 1 im Context gefunden.
+[02:25:32.153] [INFO] ADC Chip 1 Initialisierung erfolgreich.
+[02:25:32.153] [INFO] ADC Chip 2 im Context gefunden.
+[02:25:32.153] [INFO] ADC Chip 2 Initialisierung erfolgreich.
+[02:25:32.153] [INFO] ADC Chip 3 im Context gefunden.
+[02:25:32.153] [INFO] ADC Chip 3 Initialisierung erfolgreich.
+[02:25:32.153] [INFO] ADC Chip 4 im Context gefunden.
+[02:25:32.153] [INFO] ADC Chip 4 Initialisierung erfolgreich.
+[02:25:32.153] [INFO] DAC Digital-Out 1 im Context gefunden.
+[02:25:32.153] [INFO] DAC 1 Initialisierung erfolgreich.
+[02:25:32.153] [INFO] LED Driver 1 initialisiert.
+[02:25:32.153] [INFO] LED Driver 2 initialisiert.
+[02:25:32.153] [INFO] LED Driver 3 initialisiert.
+[02:25:32.153] [INFO] Serial Interface UART im Context gefunden.
+[02:25:32.153] [INFO] Serial Interface UART erfolgreich initialisiert.
+[02:25:32.153] [INFO] Serial Interface RS485 im Context gefunden.
+[02:25:32.153] [INFO] Serial Interface RS485 erfolgreich initialisiert.
+[02:25:32.153] [INFO] Serial Interface RS232 im Context gefunden.
+[02:25:32.153] [INFO] Serial Interface RS232 erfolgreich initialisiert.
+[02:25:32.153] [SYSTEM] Initialisierung erfolgreich.
+
+
+[02:25:32.153] [INFO] [LED] Alle LEDs wurden abgeschaltet.
+[02:25:32.154] [LED] Treiber 2 Ch 3 wurde auf Grün gesetzt.
+[02:25:32.154] [MAILBOX] Neuer Analog Wert für Kanal 1: 25.00 V empfangen.
+
+[02:25:32.154] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 2, Channel: 0, Neuer Wert: 25000 mV
+[02:25:32.154] [INFO] [DEBUG] Schreibe DAC Kanal 1 auf 5.00 V
+[02:25:32.155] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 24730 mV
+[02:25:32.155] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 24730 mV
+[02:25:32.155] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 24730 mV
+[02:25:32.155] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 24730 mV
+[02:25:32.155] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 24730 mV
+[02:25:32.155] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 24730 mV
+[02:25:32.155] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 24730 mV
+[02:25:32.155] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 24730 mV
+[02:25:32.155] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 24320 mV
+[02:25:32.155] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 24320 mV
+[02:25:32.155] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 24320 mV
+[02:25:32.155] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 24320 mV
+[02:25:32.155] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 24320 mV
+[02:25:32.155] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 24320 mV
+[02:25:32.155] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 24320 mV
+[02:25:32.155] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 24320 mV
+[02:25:32.155] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 23910 mV
+[02:25:32.155] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 23910 mV
+[02:25:32.155] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 23910 mV
+[02:25:32.155] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 23910 mV
+[02:25:32.155] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 23910 mV
+[02:25:32.155] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 23910 mV
+[02:25:32.155] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 23910 mV
+[02:25:32.155] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 23910 mV
+[02:25:32.155] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 23500 mV
+[02:25:32.155] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 23500 mV
+[02:25:32.155] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 23500 mV
+[02:25:32.155] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 23500 mV
+[02:25:32.155] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 23500 mV
+[02:25:32.155] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 23500 mV
+[02:25:32.155] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 23500 mV
+[02:25:32.155] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 23500 mV
+[02:25:32.156] [INFO] [DEBUG] Schreibe DAC Kanal 1 auf 5.00 V
+[       OK ] SystemControllerTest.ProcessSequence_CheckAndRegulateAnalogOut_CapsAtMaximumVoltage (2 ms)
+[ RUN      ] SystemControllerTest.ProcessSequence_CheckAndRegulateAnalogOut_CapsAtMinimumVoltage
+[02:25:32.156] ========== SIMULATION ==========
+[02:25:32.156] Platform: Native (WSL/Linux/Windows)
+[02:25:32.156] C++ Standard: 201703
+[02:25:32.156] ================================
+
+
+[02:25:32.156] [INFO] ADC Chip 1 im Context gefunden.
+[02:25:32.156] [INFO] ADC Chip 1 Initialisierung erfolgreich.
+[02:25:32.156] [INFO] ADC Chip 2 im Context gefunden.
+[02:25:32.156] [INFO] ADC Chip 2 Initialisierung erfolgreich.
+[02:25:32.156] [INFO] ADC Chip 3 im Context gefunden.
+[02:25:32.156] [INFO] ADC Chip 3 Initialisierung erfolgreich.
+[02:25:32.156] [INFO] ADC Chip 4 im Context gefunden.
+[02:25:32.156] [INFO] ADC Chip 4 Initialisierung erfolgreich.
+[02:25:32.156] [INFO] DAC Digital-Out 1 im Context gefunden.
+[02:25:32.156] [INFO] DAC 1 Initialisierung erfolgreich.
+[02:25:32.156] [INFO] LED Driver 1 initialisiert.
+[02:25:32.156] [INFO] LED Driver 2 initialisiert.
+[02:25:32.156] [INFO] LED Driver 3 initialisiert.
+[02:25:32.156] [INFO] Serial Interface UART im Context gefunden.
+[02:25:32.156] [INFO] Serial Interface UART erfolgreich initialisiert.
+[02:25:32.156] [INFO] Serial Interface RS485 im Context gefunden.
+[02:25:32.156] [INFO] Serial Interface RS485 erfolgreich initialisiert.
+[02:25:32.156] [INFO] Serial Interface RS232 im Context gefunden.
+[02:25:32.156] [INFO] Serial Interface RS232 erfolgreich initialisiert.
+[02:25:32.156] [SYSTEM] Initialisierung erfolgreich.
+
+
+[02:25:32.156] [INFO] [LED] Alle LEDs wurden abgeschaltet.
+[02:25:32.156] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 2000 mV
+[02:25:32.156] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 2000 mV
+[02:25:32.156] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 2000 mV
+[02:25:32.156] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 2000 mV
+[02:25:32.156] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 2000 mV
+[02:25:32.156] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 2000 mV
+[02:25:32.156] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 2000 mV
+[02:25:32.156] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 2000 mV
+[02:25:32.156] [LED] Treiber 2 Ch 3 wurde auf Grün gesetzt.
+[02:25:32.157] [MAILBOX] Neuer Analog Wert für Kanal 1: 0.10 V empfangen.
+
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 2020 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 2020 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 2020 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 2020 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 2020 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 2020 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 2020 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 2020 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 2, Channel: 0, Neuer Wert: 100 mV
+[02:25:32.157] [INFO] [DEBUG] Schreibe DAC Kanal 1 auf 0.02 V
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 2040 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 2040 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 2040 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 2040 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 2040 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 2040 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 2040 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 2040 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 2060 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 2060 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 2060 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 2060 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 2060 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 2060 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 2060 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 2060 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 2080 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 2080 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 2080 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 2080 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 2080 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 2080 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 2080 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 2080 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 2100 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 2100 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 2100 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 2100 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 2100 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 2100 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 2100 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 2100 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 2120 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 2120 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 2120 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 2120 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 2120 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 2120 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 2120 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 2120 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 2140 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 2140 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 2140 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 2140 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 2140 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 2140 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 2140 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 2140 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 2160 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 2160 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 2160 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 2160 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 2160 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 2160 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 2160 mV
+[02:25:32.157] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 2160 mV
+[02:25:32.158] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 2180 mV
+[02:25:32.158] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 2180 mV
+[02:25:32.158] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 2180 mV
+[02:25:32.158] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 2180 mV
+[02:25:32.158] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 2180 mV
+[02:25:32.158] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 2180 mV
+[02:25:32.158] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 2180 mV
+[02:25:32.158] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 2180 mV
+[02:25:32.158] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 2200 mV
+[02:25:32.158] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 2200 mV
+[02:25:32.158] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 2200 mV
+[02:25:32.158] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 2200 mV
+[02:25:32.158] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 2200 mV
+[02:25:32.158] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 2200 mV
+[02:25:32.158] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 2200 mV
+[02:25:32.158] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 2200 mV
+[02:25:32.158] [INFO] [DEBUG] Schreibe DAC Kanal 1 auf 0.00 V
+[       OK ] SystemControllerTest.ProcessSequence_CheckAndRegulateAnalogOut_CapsAtMinimumVoltage (2 ms)
+[ RUN      ] SystemControllerTest.ProcessSequence_CheckDigitalOutSafety_WaitsForGracePeriod
+[02:25:32.158] ========== SIMULATION ==========
+[02:25:32.158] Platform: Native (WSL/Linux/Windows)
+[02:25:32.158] C++ Standard: 201703
+[02:25:32.158] ================================
+
+
+[02:25:32.158] [INFO] ADC Chip 1 im Context gefunden.
+[02:25:32.158] [INFO] ADC Chip 1 Initialisierung erfolgreich.
+[02:25:32.158] [INFO] ADC Chip 2 im Context gefunden.
+[02:25:32.158] [INFO] ADC Chip 2 Initialisierung erfolgreich.
+[02:25:32.158] [INFO] ADC Chip 3 im Context gefunden.
+[02:25:32.158] [INFO] ADC Chip 3 Initialisierung erfolgreich.
+[02:25:32.158] [INFO] ADC Chip 4 im Context gefunden.
+[02:25:32.158] [INFO] ADC Chip 4 Initialisierung erfolgreich.
+[02:25:32.158] [INFO] DAC Digital-Out 1 im Context gefunden.
+[02:25:32.158] [INFO] DAC 1 Initialisierung erfolgreich.
+[02:25:32.158] [INFO] LED Driver 1 initialisiert.
+[02:25:32.158] [INFO] LED Driver 2 initialisiert.
+[02:25:32.158] [INFO] LED Driver 3 initialisiert.
+[02:25:32.158] [INFO] Serial Interface UART im Context gefunden.
+[02:25:32.158] [INFO] Serial Interface UART erfolgreich initialisiert.
+[02:25:32.158] [INFO] Serial Interface RS485 im Context gefunden.
+[02:25:32.159] [INFO] Serial Interface RS485 erfolgreich initialisiert.
+[02:25:32.159] [INFO] Serial Interface RS232 im Context gefunden.
+[02:25:32.159] [INFO] Serial Interface RS232 erfolgreich initialisiert.
+[02:25:32.159] [SYSTEM] Initialisierung erfolgreich.
+
+
+[02:25:32.159] [INFO] [LED] Alle LEDs wurden abgeschaltet.
+[02:25:32.159] [MAILBOX] Neue Referenzspannung für OUT Kanal 1: 24.00 V empfangen.
+
+[02:25:32.159] [INFO] [SYSTEM] Referenzspannung fuer Digital OUT Kanal 1 auf 24000 mV gesetzt
+[02:25:32.159] [LED] Treiber 2 Ch 3 wurde auf Grün gesetzt.
+[02:25:32.159] [MAILBOX] Neuer Digital Wert für Kanal 1: ON empfangen.
+
+[02:25:32.159] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 3, Channel: 0, Neuer Wert: 1 mV
+[02:25:32.159] [INFO] [DEBUG] Digital Out Kanal 1 auf HIGH gesetzt
+[02:25:32.160] [WARN] [DigitalOut 1 [Safety]] Wert außerhalb des Bereichs
+[02:25:32.160] [INFO] [DEBUG] Digital Out Kanal 1 auf LOW gesetzt
+[       OK ] SystemControllerTest.ProcessSequence_CheckDigitalOutSafety_WaitsForGracePeriod (1 ms)
+[ RUN      ] SystemControllerTest.ProcessSequence_CheckDigitalOutSafety_PassesIfHardwareSwitchesInTime
+[02:25:32.160] ========== SIMULATION ==========
+[02:25:32.160] Platform: Native (WSL/Linux/Windows)
+[02:25:32.160] C++ Standard: 201703
+[02:25:32.160] ================================
+
+
+[02:25:32.160] [INFO] ADC Chip 1 im Context gefunden.
+[02:25:32.160] [INFO] ADC Chip 1 Initialisierung erfolgreich.
+[02:25:32.160] [INFO] ADC Chip 2 im Context gefunden.
+[02:25:32.160] [INFO] ADC Chip 2 Initialisierung erfolgreich.
+[02:25:32.160] [INFO] ADC Chip 3 im Context gefunden.
+[02:25:32.160] [INFO] ADC Chip 3 Initialisierung erfolgreich.
+[02:25:32.160] [INFO] ADC Chip 4 im Context gefunden.
+[02:25:32.160] [INFO] ADC Chip 4 Initialisierung erfolgreich.
+[02:25:32.160] [INFO] DAC Digital-Out 1 im Context gefunden.
+[02:25:32.160] [INFO] DAC 1 Initialisierung erfolgreich.
+[02:25:32.160] [INFO] LED Driver 1 initialisiert.
+[02:25:32.160] [INFO] LED Driver 2 initialisiert.
+[02:25:32.160] [INFO] LED Driver 3 initialisiert.
+[02:25:32.160] [INFO] Serial Interface UART im Context gefunden.
+[02:25:32.160] [INFO] Serial Interface UART erfolgreich initialisiert.
+[02:25:32.160] [INFO] Serial Interface RS485 im Context gefunden.
+[02:25:32.160] [INFO] Serial Interface RS485 erfolgreich initialisiert.
+[02:25:32.160] [INFO] Serial Interface RS232 im Context gefunden.
+[02:25:32.160] [INFO] Serial Interface RS232 erfolgreich initialisiert.
+[02:25:32.160] [SYSTEM] Initialisierung erfolgreich.
+
+
+[02:25:32.160] [INFO] [LED] Alle LEDs wurden abgeschaltet.
+[02:25:32.160] [MAILBOX] Neue Referenzspannung für OUT Kanal 1: 24.00 V empfangen.
+
+[02:25:32.160] [INFO] [SYSTEM] Referenzspannung fuer Digital OUT Kanal 1 auf 24000 mV gesetzt
+[02:25:32.160] [LED] Treiber 2 Ch 3 wurde auf Grün gesetzt.
+[02:25:32.160] [MAILBOX] Neuer Digital Wert für Kanal 1: ON empfangen.
+
+[02:25:32.160] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 3, Channel: 0, Neuer Wert: 1 mV
+[02:25:32.160] [INFO] [DEBUG] Digital Out Kanal 1 auf HIGH gesetzt
+[02:25:32.161] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 2400 mV
+[02:25:32.161] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 2400 mV
+[02:25:32.161] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 2400 mV
+[02:25:32.161] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 2400 mV
+[02:25:32.161] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 2400 mV
+[02:25:32.161] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 2400 mV
+[02:25:32.161] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 2400 mV
+[02:25:32.161] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 2400 mV
+[02:25:32.161] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 4800 mV
+[02:25:32.161] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 4800 mV
+[02:25:32.161] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 4800 mV
+[02:25:32.161] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 4800 mV
+[02:25:32.161] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 4800 mV
+[02:25:32.161] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 4800 mV
+[02:25:32.161] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 4800 mV
+[02:25:32.161] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 4800 mV
+[02:25:32.161] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 7200 mV
+[02:25:32.161] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 7200 mV
+[02:25:32.161] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 7200 mV
+[02:25:32.161] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 7200 mV
+[02:25:32.161] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 7200 mV
+[02:25:32.161] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 7200 mV
+[02:25:32.161] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 7200 mV
+[02:25:32.161] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 7200 mV
+[02:25:32.161] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 9600 mV
+[02:25:32.161] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 9600 mV
+[02:25:32.161] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 9600 mV
+[02:25:32.161] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 9600 mV
+[02:25:32.161] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 9600 mV
+[02:25:32.161] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 9600 mV
+[02:25:32.161] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 9600 mV
+[02:25:32.161] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 9600 mV
+[02:25:32.161] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 12000 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 12000 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 12000 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 12000 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 12000 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 12000 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 12000 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 12000 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 14400 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 14400 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 14400 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 14400 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 14400 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 14400 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 14400 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 14400 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 16800 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 16800 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 16800 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 16800 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 16800 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 16800 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 16800 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 16800 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 19200 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 19200 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 19200 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 19200 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 19200 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 19200 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 19200 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 19200 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 21600 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 21600 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 21600 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 21600 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 21600 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 21600 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 21600 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 21600 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 0, Neuer Wert: 24000 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 1, Neuer Wert: 24000 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 2, Neuer Wert: 24000 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 0, Channel: 3, Neuer Wert: 24000 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 0, Neuer Wert: 24000 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 1, Neuer Wert: 24000 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 2, Neuer Wert: 24000 mV
+[02:25:32.162] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 1, Channel: 3, Neuer Wert: 24000 mV
+[       OK ] SystemControllerTest.ProcessSequence_CheckDigitalOutSafety_PassesIfHardwareSwitchesInTime (2 ms)
+[----------] 25 tests from SystemControllerTest (88 ms total)
+
+[----------] 4 tests from ErrorManagerTest
+[ RUN      ] ErrorManagerTest.LogsNewErrorCorrectly
+[02:25:32.163] [WARN] [ADC 1] Device nicht gefunden oder antwortet nicht
+[       OK ] ErrorManagerTest.LogsNewErrorCorrectly (0 ms)
+[ RUN      ] ErrorManagerTest.AutoRecoversFromResolvedError
+[02:25:32.163] [WARN] [I2C Bus 2] Allgemeines I2C Kommunikations Problem
+[02:25:32.163] [Fehler behoben] [I2C Bus 2] Allgemeines I2C Kommunikations Problem
+[       OK ] ErrorManagerTest.AutoRecoversFromResolvedError (0 ms)
+[ RUN      ] ErrorManagerTest.IgnoresDuplicateErrorsInSameCycle
+[02:25:32.163] [WARN] [I2C Bus 2] Allgemeines I2C Kommunikations Problem
+[       OK ] ErrorManagerTest.IgnoresDuplicateErrorsInSameCycle (0 ms)
+[ RUN      ] ErrorManagerTest.PreventsBufferOverflowOnMassiveFailures
+[02:25:32.163] [WARN] [Test 0] Wert außerhalb des Bereichs
+[02:25:32.163] [WARN] [Test 1] Wert außerhalb des Bereichs
+[02:25:32.163] [WARN] [Test 2] Wert außerhalb des Bereichs
+[02:25:32.163] [WARN] [Test 3] Wert außerhalb des Bereichs
+[02:25:32.163] [WARN] [Test 4] Wert außerhalb des Bereichs
+[02:25:32.163] [WARN] [Test 5] Wert außerhalb des Bereichs
+[02:25:32.163] [WARN] [Test 6] Wert außerhalb des Bereichs
+[02:25:32.163] [WARN] [Test 7] Wert außerhalb des Bereichs
+[02:25:32.163] [WARN] [Test 8] Wert außerhalb des Bereichs
+[02:25:32.163] [WARN] [Test 9] Wert außerhalb des Bereichs
+[02:25:32.163] [WARN] [Test 10] Wert außerhalb des Bereichs
+[02:25:32.163] [WARN] [Test 11] Wert außerhalb des Bereichs
+[02:25:32.163] [WARN] [Test 12] Wert außerhalb des Bereichs
+[02:25:32.163] [WARN] [Test 13] Wert außerhalb des Bereichs
+[02:25:32.163] [WARN] [Test 14] Wert außerhalb des Bereichs
+[02:25:32.163] [WARN] [Test 15] Wert außerhalb des Bereichs
+[02:25:32.163] [WARN] [Test 16] Wert außerhalb des Bereichs
+[02:25:32.163] [WARN] [Test 17] Wert außerhalb des Bereichs
+[02:25:32.163] [WARN] [Test 18] Wert außerhalb des Bereichs
+[02:25:32.163] [WARN] [Test 19] Wert außerhalb des Bereichs
+[02:25:32.163] [WARN] Maximale Anzahl von Fehlern in diesem Zyklus erreicht.
+[02:25:32.163] [WARN] [Test 20] Wert außerhalb des Bereichs
+[02:25:32.163] [WARN] [Test 21] Wert außerhalb des Bereichs
+[02:25:32.163] [WARN] [Test 22] Wert außerhalb des Bereichs
+[02:25:32.163] [WARN] [Test 23] Wert außerhalb des Bereichs
+[02:25:32.163] [WARN] [Test 24] Wert außerhalb des Bereichs
+[02:25:32.163] [WARN] [Test 25] Wert außerhalb des Bereichs
+[02:25:32.163] [WARN] [Test 26] Wert außerhalb des Bereichs
+[02:25:32.163] [WARN] [Test 27] Wert außerhalb des Bereichs
+[02:25:32.163] [WARN] [Test 28] Wert außerhalb des Bereichs
+[02:25:32.163] [WARN] [Test 29] Wert außerhalb des Bereichs
+[       OK ] ErrorManagerTest.PreventsBufferOverflowOnMassiveFailures (0 ms)
+[----------] 4 tests from ErrorManagerTest (0 ms total)
+
+[----------] 3 tests from HardwareBootstrapperTest
+[ RUN      ] HardwareBootstrapperTest.BootFailsGracefullyOnNullptrs
+[02:25:32.163] [WARN] ADC Chip 1 fehlt im Context!
+[02:25:32.163] [WARN] [ADC 1 [Init]] Nullpointer Überprüfung fehlgeschlagen
+[02:25:32.163] [WARN] ADC Chip 2 fehlt im Context!
+[02:25:32.163] [WARN] [ADC 2 [Init]] Nullpointer Überprüfung fehlgeschlagen
+[02:25:32.163] [WARN] ADC Chip 3 fehlt im Context!
+[02:25:32.163] [WARN] [ADC 3 [Init]] Nullpointer Überprüfung fehlgeschlagen
+[02:25:32.163] [WARN] ADC Chip 4 fehlt im Context!
+[02:25:32.163] [WARN] [ADC 4 [Init]] Nullpointer Überprüfung fehlgeschlagen
+[02:25:32.163] [ERROR] DAC 1 fehlt im Context!
+[02:25:32.163] [WARN] [DAC 1 [Init]] Nullpointer Überprüfung fehlgeschlagen
+[02:25:32.163] [WARN] LED Driver 1 fehlt im Context!
+[02:25:32.163] [WARN] [LED-Treiber 1 [Init]] Nullpointer Überprüfung fehlgeschlagen
+[02:25:32.163] [WARN] LED Driver 2 fehlt im Context!
+[02:25:32.163] [WARN] [LED-Treiber 2 [Init]] Nullpointer Überprüfung fehlgeschlagen
+[02:25:32.163] [WARN] LED Driver 3 fehlt im Context!
+[02:25:32.163] [WARN] [LED-Treiber 3 [Init]] Nullpointer Überprüfung fehlgeschlagen
+[02:25:32.163] [WARN] Serial Interface 0 fehlt im Context!
+[02:25:32.163] [WARN] Serial Interface 1 fehlt im Context!
+[02:25:32.163] [WARN] Serial Interface 2 fehlt im Context!
+[02:25:32.163] [WARN] Nicht alle konfigurierten ADC-Kanäle initialisiert!
+[02:25:32.163] [WARN] Nicht alle konfigurierten DAC-Kanäle initialisiert!
+[02:25:32.163] [WARN] Nicht alle konfigurierten LED-Treiber initialisiert!
+[02:25:32.163] [WARN] Nicht alle konfigurierten Serial-Treiber initialisiert!
+[02:25:32.163] [SYSTEM] Initialisierung mit WARNUNGEN abgeschlossen (Eingeschränkter Modus).
+
+
+[       OK ] HardwareBootstrapperTest.BootFailsGracefullyOnNullptrs (0 ms)
+[ RUN      ] HardwareBootstrapperTest.BootSucceedsWithValidHardwareInfo
+[02:25:32.163] [INFO] ADC Chip 1 im Context gefunden.
+[02:25:32.163] [INFO] ADC Chip 1 Initialisierung erfolgreich.
+[02:25:32.163] [INFO] ADC Chip 2 im Context gefunden.
+[02:25:32.163] [INFO] ADC Chip 2 Initialisierung erfolgreich.
+[02:25:32.163] [INFO] ADC Chip 3 im Context gefunden.
+[02:25:32.163] [INFO] ADC Chip 3 Initialisierung erfolgreich.
+[02:25:32.163] [INFO] ADC Chip 4 im Context gefunden.
+[02:25:32.163] [INFO] ADC Chip 4 Initialisierung erfolgreich.
+[02:25:32.163] [INFO] DAC Digital-Out 1 im Context gefunden.
+[02:25:32.163] [INFO] DAC 1 Initialisierung erfolgreich.
+[02:25:32.163] [INFO] LED Driver 1 initialisiert.
+[02:25:32.163] [INFO] LED Driver 2 initialisiert.
+[02:25:32.163] [INFO] LED Driver 3 initialisiert.
+[02:25:32.163] [INFO] Serial Interface UART im Context gefunden.
+[02:25:32.163] [INFO] Serial Interface UART erfolgreich initialisiert.
+[02:25:32.163] [INFO] Serial Interface RS485 im Context gefunden.
+[02:25:32.163] [INFO] Serial Interface RS485 erfolgreich initialisiert.
+[02:25:32.163] [INFO] Serial Interface RS232 im Context gefunden.
+[02:25:32.163] [INFO] Serial Interface RS232 erfolgreich initialisiert.
+[02:25:32.163] [SYSTEM] Initialisierung erfolgreich.
+
+
+[       OK ] HardwareBootstrapperTest.BootSucceedsWithValidHardwareInfo (0 ms)
+[ RUN      ] HardwareBootstrapperTest.BootRegistersHardwareErrors
+[02:25:32.163] [INFO] ADC Chip 1 im Context gefunden.
+[02:25:32.163] [WARN] [ADC 1 [Init]] Allgemeines I2C Kommunikations Problem
+[02:25:32.163] [INFO] ADC Chip 2 im Context gefunden.
+[02:25:32.163] [INFO] ADC Chip 2 Initialisierung erfolgreich.
+[02:25:32.163] [INFO] ADC Chip 3 im Context gefunden.
+[02:25:32.163] [INFO] ADC Chip 3 Initialisierung erfolgreich.
+[02:25:32.163] [INFO] ADC Chip 4 im Context gefunden.
+[02:25:32.163] [INFO] ADC Chip 4 Initialisierung erfolgreich.
+[02:25:32.163] [INFO] DAC Digital-Out 1 im Context gefunden.
+[02:25:32.163] [INFO] DAC 1 Initialisierung erfolgreich.
+[02:25:32.163] [INFO] LED Driver 1 initialisiert.
+[02:25:32.163] [INFO] LED Driver 2 initialisiert.
+[02:25:32.163] [INFO] LED Driver 3 initialisiert.
+[02:25:32.163] [INFO] Serial Interface UART im Context gefunden.
+[02:25:32.163] [INFO] Serial Interface UART erfolgreich initialisiert.
+[02:25:32.163] [INFO] Serial Interface RS485 im Context gefunden.
+[02:25:32.163] [INFO] Serial Interface RS485 erfolgreich initialisiert.
+[02:25:32.163] [INFO] Serial Interface RS232 im Context gefunden.
+[02:25:32.163] [INFO] Serial Interface RS232 erfolgreich initialisiert.
+[02:25:32.163] [WARN] Nicht alle konfigurierten ADC-Kanäle initialisiert!
+[02:25:32.163] [SYSTEM] Initialisierung mit WARNUNGEN abgeschlossen (Eingeschränkter Modus).
+
+
+[       OK ] HardwareBootstrapperTest.BootRegistersHardwareErrors (0 ms)
+[----------] 3 tests from HardwareBootstrapperTest (0 ms total)
+
+[----------] 5 tests from LedManagerTest
+[ RUN      ] LedManagerTest.IgnoresUpdatesIfHealthMaskIsZero
+[       OK ] LedManagerTest.IgnoresUpdatesIfHealthMaskIsZero (0 ms)
+[ RUN      ] LedManagerTest.SetsCorrectColorsForDigitalIo
+[02:25:32.163] [INFO] [SYSTEM] Referenzspannung fuer Digital IN Kanal 1 auf 24000 mV gesetzt
+[       OK ] LedManagerTest.SetsCorrectColorsForDigitalIo (0 ms)
+[ RUN      ] LedManagerTest.SetsRedColorOnFloatState
+[02:25:32.163] [INFO] [SYSTEM] Referenzspannung fuer Digital IN Kanal 2 auf 24000 mV gesetzt
+[       OK ] LedManagerTest.SetsRedColorOnFloatState (0 ms)
+[ RUN      ] LedManagerTest.UpdatesSystemLedBasedOnErrorCount
+[02:25:32.164] [LED] Treiber 2 Ch 3 wurde auf Grün gesetzt.
+[02:25:32.164] [WARN] [System] Wert außerhalb des Bereichs
+[02:25:32.164] [LED] Treiber 2 Ch 3 wurde auf Rot gesetzt.
+[       OK ] LedManagerTest.UpdatesSystemLedBasedOnErrorCount (0 ms)
+[ RUN      ] LedManagerTest.LogsErrorIfI2cCommunicationFails
+[02:25:32.164] [WARN] [LED-Treiber 0Ch 5 [SetColor]] Allgemeines I2C Kommunikations Problem
+[       OK ] LedManagerTest.LogsErrorIfI2cCommunicationFails (0 ms)
+[----------] 5 tests from LedManagerTest (0 ms total)
+
+[----------] 5 tests from MailboxTest
+[ RUN      ] MailboxTest.AnalogTarget_ValidAndInvalidBounds
+[02:25:32.164] [MAILBOX] Neuer Analog Wert für Kanal 1: 15.00 V empfangen.
+
+[       OK ] MailboxTest.AnalogTarget_ValidAndInvalidBounds (0 ms)
+[ RUN      ] MailboxTest.DigitalTarget_IgnoresInvalidChannels
+[02:25:32.164] [MAILBOX] Neuer Digital Wert für Kanal 1: ON empfangen.
+
+[       OK ] MailboxTest.DigitalTarget_IgnoresInvalidChannels (0 ms)
+[ RUN      ] MailboxTest.AnalogTarget_LastWriteWins
+[02:25:32.164] [MAILBOX] Neuer Analog Wert für Kanal 3: 5.00 V empfangen.
+
+[02:25:32.164] [MAILBOX] Neuer Analog Wert für Kanal 3: 10.00 V empfangen.
+
+[       OK ] MailboxTest.AnalogTarget_LastWriteWins (0 ms)
+[ RUN      ] MailboxTest.SerialTx_AppendsMultiplePayloads
+[       OK ] MailboxTest.SerialTx_AppendsMultiplePayloads (0 ms)
+[ RUN      ] MailboxTest.SerialConfig_IgnoresInvalidBaudrates
+[       OK ] MailboxTest.SerialConfig_IgnoresInvalidBaudrates (0 ms)
+[----------] 5 tests from MailboxTest (0 ms total)
+
+[----------] 3 tests from MovingAverageFilterTest
+[ RUN      ] MovingAverageFilterTest.CalculatesAverageCorrectly
+[       OK ] MovingAverageFilterTest.CalculatesAverageCorrectly (0 ms)
+[ RUN      ] MovingAverageFilterTest.RingBufferOverridesOldestValues
+[       OK ] MovingAverageFilterTest.RingBufferOverridesOldestValues (0 ms)
+[ RUN      ] MovingAverageFilterTest.ResetClearsBufferAndPreventsDivByZero
+[       OK ] MovingAverageFilterTest.ResetClearsBufferAndPreventsDivByZero (0 ms)
+[----------] 3 tests from MovingAverageFilterTest (0 ms total)
+
+[----------] 6 tests from ProcessImagerTest
+[ RUN      ] ProcessImagerTest.SyncUpdateToActive_TriggersChangeFlags
+[02:25:32.164] [SYSTEM] Änderung am Prozessabbild erkannt: Bank: 2, Channel: 2, Neuer Wert: 5000 mV
+[       OK ] ProcessImagerTest.SyncUpdateToActive_TriggersChangeFlags (0 ms)
+[ RUN      ] ProcessImagerTest.SafeGetters_ReturnZeroOnInvalidChannels
+[       OK ] ProcessImagerTest.SafeGetters_ReturnZeroOnInvalidChannels (0 ms)
+[ RUN      ] ProcessImagerTest.SetDigitalReference_IgnoresInvalidInputs
+[02:25:32.164] [INFO] [SYSTEM] Referenzspannung fuer Digital IN Kanal 1 auf 5000 mV gesetzt
+[02:25:32.164] [INFO] [SYSTEM] Referenzspannung fuer Digital OUT Kanal 1 auf 5000 mV gesetzt
+[       OK ] ProcessImagerTest.SetDigitalReference_IgnoresInvalidInputs (0 ms)
+[ RUN      ] ProcessImagerTest.GetDigitalState_CalculatesStatesCorrectly
+[02:25:32.164] [INFO] [SYSTEM] Referenzspannung fuer Digital IN Kanal 1 auf 10000 mV gesetzt
+[       OK ] ProcessImagerTest.GetDigitalState_CalculatesStatesCorrectly (0 ms)
+[ RUN      ] ProcessImagerTest.AdjustedDacVoltage_StoresAndLimitsValues
+[       OK ] ProcessImagerTest.AdjustedDacVoltage_StoresAndLimitsValues (0 ms)
+[ RUN      ] ProcessImagerTest.Setters_IgnoreInvalidInputs
+[       OK ] ProcessImagerTest.Setters_IgnoreInvalidInputs (0 ms)
+[----------] 6 tests from ProcessImagerTest (0 ms total)
+
+[----------] 4 tests from SerialStreamerTest
+[ RUN      ] SerialStreamerTest.WriteTx_IgnoredIfHealthMaskIsZero
+[       OK ] SerialStreamerTest.WriteTx_IgnoredIfHealthMaskIsZero (0 ms)
+[ RUN      ] SerialStreamerTest.WriteTx_CalledIfPortIsHealthy
+[       OK ] SerialStreamerTest.WriteTx_CalledIfPortIsHealthy (0 ms)
+[ RUN      ] SerialStreamerTest.SetBaudrate_IgnoredForInvalidPorts
+[       OK ] SerialStreamerTest.SetBaudrate_IgnoredForInvalidPorts (0 ms)
+[ RUN      ] SerialStreamerTest.ProcessReadRx_TriggersCallbackOnTimeout
+[       OK ] SerialStreamerTest.ProcessReadRx_TriggersCallbackOnTimeout (62 ms)
+[----------] 4 tests from SerialStreamerTest (62 ms total)
+
+[----------] 4 tests from WebBouncerTest
+[ RUN      ] WebBouncerTest.AcquireSlot_LimitsAtMaxClients
+[       OK ] WebBouncerTest.AcquireSlot_LimitsAtMaxClients (0 ms)
+[ RUN      ] WebBouncerTest.ReleaseSlot_FreesSpaceForNewRequests
+[       OK ] WebBouncerTest.ReleaseSlot_FreesSpaceForNewRequests (0 ms)
+[ RUN      ] WebBouncerTest.ReleaseSlot_DoesNotUnderflow
+[       OK ] WebBouncerTest.ReleaseSlot_DoesNotUnderflow (0 ms)
+[ RUN      ] WebBouncerTest.AllowSseConnection_LimitsMaxStreams
+[       OK ] WebBouncerTest.AllowSseConnection_LimitsMaxStreams (0 ms)
+[----------] 4 tests from WebBouncerTest (0 ms total)
+
+[----------] 3 tests from DataConverterUtilsTest
+[ RUN      ] DataConverterUtilsTest.EvaluatesSpsLogicCorrectly
+[       OK ] DataConverterUtilsTest.EvaluatesSpsLogicCorrectly (0 ms)
+[ RUN      ] DataConverterUtilsTest.EvaluatesExactThresholdBoundaries
+[       OK ] DataConverterUtilsTest.EvaluatesExactThresholdBoundaries (0 ms)
+[ RUN      ] DataConverterUtilsTest.DeterminesCorrectLedColor
+[       OK ] DataConverterUtilsTest.DeterminesCorrectLedColor (0 ms)
+[----------] 3 tests from DataConverterUtilsTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 70 tests from 11 test suites ran. (156 ms total)
+[  PASSED  ] 70 tests.
+
+---------------- native:test_desktop [PASSED] Took 1.07 seconds ----------------
+
+=================================== SUMMARY ===================================
+Environment         Test          Status    Duration
+------------------  ------------  --------  ------------
+esp32-s3-devkitc-1  test_desktop  SKIPPED
+native              test_desktop  PASSED    00:00:01.068
+================= 70 test cases: 70 succeeded in 00:00:01.068 =================

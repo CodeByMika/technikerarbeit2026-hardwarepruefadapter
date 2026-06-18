@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP LP5018DGSR
+D  Operating voltage range:  VCC range: 2.7V to 5.5V  EN, SDA, and SCL pins compatible with 1.8V, 3.3V, and 5V power rails  Output maximum voltage: 6V  24 constant-current sinks with high precision  25.5mA maximum per channel with VCC in full range  35mA maximum per channel when VCC  3.3V  Device-to-device error: +/-7%; channel-tochannel error: +/-7%  Ultralow quiescent current:  Shutdown mode: 1A (maximum) with EN low  Power saving mode: 10A (typical) with EN high and all LEDs off for 
+K
+F https://www.ti.com/lit/gpn/lp5018
+$ENDCMP
+#
+#End Doc Library

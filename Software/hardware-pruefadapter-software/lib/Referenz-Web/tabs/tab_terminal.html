@@ -1,0 +1,60 @@
+<div id="tab-terminal" class="tab-pane">
+    <h2 class="section-title">Interaktives Terminal (Serial)</h2>
+    <div class="card-section">
+        <div class="card">
+            <div class="toolbar">
+                <div class="toolbar-group">
+                    <label class="control-label">Interface:</label>
+                    <select id="comm-interface-select" class="control-select">
+                        <option value="ALL" selected>Alle Interfaces</option>
+                        <option value="UART">UART</option>
+                        <option value="RS232">RS232</option>
+                        <option value="RS485">RS485</option>
+                    </select>
+                </div>
+                <div class="toolbar-group">
+                    <label class="control-label">New Liner:</label>
+                    <select id="term-line-ending" class="control-select" style="width: 70px;">
+                        <option value="auto" selected>Auto</option>
+                        <option value="null">None</option>
+                        <option value="\n">LF</option>
+                        <option value="\r">CR</option>
+                        <option value="\r\n">CRLF</option>
+                    </select>
+                </div>
+                <div class="toolbar-group">
+                    <label class="control-label">Baud:</label>
+                    <select id="comm-baud-select" class="control-select">
+                        <option value="9600">9600</option>
+                        <option value="115200" selected>115200</option>
+                    </select>
+                </div>
+                <div class="toolbar-group">
+                    <label class="control-label">Ziel Interface:</label>
+                    <select id="term-tx-target" class="control-select" style="width: 80px;">
+                        <option value="UART">UART</option>
+                        <option value="RS232">RS232</option>
+                        <option value="RS485">RS485</option>
+                    </select>
+                </div>
+                <div class="toolbar-actions">
+                    <button class="btn" id="term-apply-config-btn">Config anwenden</button>
+                    <button class="btn-secondary" id="term-export-btn">Export</button>
+                    <button class="btn-secondary" id="term-clear-btn">Clear</button>
+                    <label style="display:flex; align-items:center; gap:5px; font-size:0.8rem;">
+                        <input type="checkbox" id="term-autoscroll" checked> Autoscroll
+                    </label>
+                </div>
+            </div>
+
+            <div id="comm-log" class="terminal-log"></div>
+
+            <div class="toolbar" style="margin-top: 10px;">
+                <div class="input-group" style="flex: 1; flex-wrap: nowrap;">
+                    <input type="text" id="term-input" class="control-input" style="width: 100%;" placeholder="Befehl eingeben...">
+                </div>
+                <button class="btn" id="term-send-btn">Senden</button>
+            </div>
+        </div>
+    </div>
+</div>

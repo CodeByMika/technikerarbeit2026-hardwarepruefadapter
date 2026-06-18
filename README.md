@@ -36,7 +36,8 @@ Das Hauptaugenmerk der Entwicklung lag auf einer **sauberen Systemarchitektur (C
   * ADCs (ADS1115) für Spannungsmessung.
   * DAC (DAC8574) zur Ausgabe analoger Spannung.
   * LED-Treiber (LP5018) für das Status-Feedback direkt am Gerät.
-* **Schnittstellen:** UART, RS232, RS485 für externe Gerätekommunikation.
+* **Externe Schnittstellen:** UART, RS232, RS485 für externe Gerätekommunikation.
+>**Wichtig:** Hardwareänderungshinweise beachten, diese sind in der V1.0 nicht enthalten.
 
 ## 🏗️ Software-Architektur
 

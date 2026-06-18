@@ -22,7 +22,6 @@ Das Hauptaugenmerk der Entwicklung lag auf einer **sauberen Systemarchitektur (C
   <img src="Dokumentation/HardwarePruefadapter-Profilbild.jpg" alt="Prüfadapter" />
   
   </p>
-  
 
 ## ✨ Kernfunktionen & Features
 
@@ -49,8 +48,22 @@ Die Firmware basiert auf dem **EVA-Prinzip** (Eingabe - Verarbeitung - Ausgabe) 
 
 Alle Hardware-Abhängigkeiten werden über Interfaces injiziert (Dependency Injection), wodurch die gesamte Logik auf dem PC simuliert und mit **GoogleTest** geprüft werden kann.
 
----
-
 ## 🛠️ Lokale Entwicklung & Testing
 
 Das Projekt nutzt **PlatformIO** und ein Abstraktions-`Makefile` für reibungslose Entwicklung unter Linux/WSL2 und Windows.
+
+## 👨‍💻 Über den Autor
+
+Dieses Projekt dient als praktischer Nachweis meiner Fähigkeiten im Bereich der hardwarenahen Softwareentwicklung, Systemarchitektur und Schaltungsentwicklung.
+
+## ⚖️ Rechtliches & Haftungsausschluss (Disclaimer)
+
+**Zweck des Projekts:** Dieses Projekt wurde ausschließlich zu Bildungs- und Demonstrationszwecken im Rahmen einer Weiterbildung zum staatlich geprüften Techniker entwickelt. Es handelt sich hierbei **nicht** um ein geprüftes, zertifiziertes oder für den produktiven Einsatz im industriellen oder privaten Umfeld zugelassenes Endprodukt.
+
+**Haftungsausschluss:** Die Nutzung der in diesem Repository bereitgestellten Informationen, Quellcodes (Software) und Hardware-Designs (Schaltpläne, Gerber-Daten, KiCad-Files) erfolgt **ausschließlich auf eigene Gefahr**.
+
+* Der Autor übernimmt keinerlei Gewähr für die Aktualität, Korrektheit, Vollständigkeit, Qualität oder Sicherheit der bereitgestellten Informationen.
+* Haftungsansprüche gegen den Autor, welche sich auf Schäden materieller, immaterieller, personeller oder finanzieller Art beziehen, die durch die Nutzung oder Nichtnutzung der dargebotenen Informationen bzw. durch die Nutzung fehlerhafter und unvollständiger Informationen verursacht wurden, sind grundsätzlich ausgeschlossen.
+* Beim Nachbau oder Betrieb der Hardware wird mit teilweise gefährlichen elektrischen Spannungen gearbeitet. Ein Nachbau darf nur von qualifiziertem Fachpersonal unter Einhaltung geltender VDE- und Sicherheitsvorschriften durchgeführt werden.
+
+**Urheberrecht:** Alle Rechte an diesem Projekt, dem Quellcode und dem Hardware-Design liegen, sofern nicht anders durch Lizenzen von Drittanbietern angegeben (z.B. Bibliotheken im `/lib` Ordner), beim Autor.

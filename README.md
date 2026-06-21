@@ -25,7 +25,7 @@ Das Hauptaugenmerk der Entwicklung lag auf einer **sauberen Systemarchitektur (C
 
 ## ✨ Kernfunktionen & Features
 
-### 💻 Software
+### 💻 Software (VS Code)
 * **Clean Architecture:** Strikte Trennung von Hardware-Treibern (Adaptern) und Business-Logik. Alle Logik-Komponenten sind plattformunabhängig in C++17 geschrieben.
 * **Web-Dashboard:** Eine eingebettete Single-Page-Application (HTML/CSS/JS) direkt auf dem Mikrocontroller zur Steuerung und Überwachung der I/Os.
 * **RESTful OpenAPI:** Bereitstellung einer API zur Automatisierung sowie Server-Sent Events (SSE) für ein Live-Terminal und Echtzeit-Log-Streaming.
@@ -51,7 +51,7 @@ Alle Hardware-Abhängigkeiten werden über Interfaces injiziert (Dependency Inje
 
 ## 🛠️ Lokale Entwicklung & Testing
 
-Das Projekt nutzt **PlatformIO** und ein Abstraktions-`Makefile` für reibungslose Entwicklung unter Linux/WSL2 und Windows.
+Das Projekt nutzt **PlatformIO** und ein `Makefile` für reibungslose Entwicklung unter Linux/WSL2 und Windows.
 
 ## 👨‍💻 Über den Autor
 
